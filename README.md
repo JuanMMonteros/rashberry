@@ -1,12 +1,12 @@
-#Codigos Raspberry
+# Codigos Raspberry
 
-##Tratar de ser prolijo con l que se sube al repo 
+## Tratar de ser prolijo con l que se sube al repo 
 
 library: Incluir librerias utilizadas 
 TP4:solo los puntos de este tp
 otros: es carpetas a parte aclaradas
 
-##Basico de git
+## Basico de git
 gid add "archivo a agregar"
 git add .  (agrega todo lo distinto cuidado de no agregar cosas que no pinten)
 git commit -m "texto del commit"
