@@ -2,9 +2,9 @@
 
 ## Tratar de ser prolijo con lo que se sube al repo 
 
-* library: Incluir librerias utilizadas 
-* TP4:solo los puntos de este tp
-* otros: es carpetas a parte aclaradas que son en lo posible
+* library: Incluir librerias utilizadas
+* TP4: solo los puntos de este tp
+* other: Todo lo que no sea parte de ningun tp
 
 ## Basico de git
 * gid add "archivo a agregar"
