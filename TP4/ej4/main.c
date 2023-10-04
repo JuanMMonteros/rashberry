@@ -5,10 +5,10 @@ int main(void){
 
 pioInit();
 //entradas
-pinmode(5,INPUT);
-pinmode(6,INPUT);
-pinmode(13,INPUT);
-pinmode(19,INPUT);
+pinMode(5,INPUT);
+pinMode(6,INPUT);
+pinMode(13,INPUT);
+pinMode(19,INPUT);
 //salidas
 pinMode(23,OUTPUT);
 pinMode(24,OUTPUT);
@@ -19,10 +19,10 @@ pinMode(20,OUTPUT);
 pinMode(21,OUTPUT);
 pinMode(26,OUTPUT);
 
-digitalWrite(23, digitalRead(5));
-digitalWrite(24, digitalRead(6));
-digitalWrite(25, digitalRead(13));
-digitalWrite(12, digitalRead(19));
+digitalWrite(25, digitalRead(5));
+digitalWrite(12, digitalRead(6));
+digitalWrite(16, digitalRead(13));
+digitalWrite(20, digitalRead(19));
 
 
 }
