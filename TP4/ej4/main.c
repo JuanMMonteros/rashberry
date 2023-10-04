@@ -9,6 +9,7 @@ pinMode(5,INPUT);
 pinMode(6,INPUT);
 pinMode(13,INPUT);
 pinMode(19,INPUT);
+pinMode(17,INPUT);
 //salidas
 pinMode(23,OUTPUT);
 pinMode(24,OUTPUT);
@@ -19,10 +20,12 @@ pinMode(20,OUTPUT);
 pinMode(21,OUTPUT);
 pinMode(26,OUTPUT);
 
+while(digitalRead(17)){
 digitalWrite(25, digitalRead(5));
 digitalWrite(12, digitalRead(6));
 digitalWrite(16, digitalRead(13));
 digitalWrite(20, digitalRead(19));
+}
 
-
+return 0;
 }
