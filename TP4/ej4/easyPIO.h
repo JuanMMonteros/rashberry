@@ -66,8 +66,7 @@ void digitalWrite(int pin, int val) { // writes to selected pin
 }
 
 int digitalRead(int pin) {
-int reg
-= pin / 32;
+int reg = pin / 32;
 int offset = pin % 32;
 return (GPLEV[reg] >> offset) & 0x00000001;
 }
