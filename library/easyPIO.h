@@ -65,6 +65,12 @@ void digitalWrite(int pin, int val) { // writes to selected pin
 	else GPCLR[reg] = 1 << offset;
 }
 
+int digitalRead(int pin) {
+int reg = pin / 32;
+int offset = pin % 32;
+return (GPLEV[reg] >> offset) & 0x00000001;
+}
+
 void pioInit() {
 	int  mem_fd;
 	void *reg_map, *timer_map, *spi_map;
