@@ -1,3 +1,5 @@
+#ifndef "easyPIO_H"
+#define "easyPIO_H"	
 #include <sys/mman.h>
 #include <stdio.h>
 #include <stdlib.h>
