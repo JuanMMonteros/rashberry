@@ -4,12 +4,8 @@
 
 void auto_fan();
 
-#define delay  500
 
-int pin[9]={23,24,25,12,16,20,21,26,17};
-
-void main() {
-	
+int main() {
 	
 	pioInit();
 	pinMode(pin[0],OUTPUT);
@@ -23,22 +19,20 @@ void main() {
 	pinMode(pin[8],INPUT);
 	
 	auto_fan();
+	
+	return 0;
 }
 
 void auto_fan(){
 	do{
 		for(int i=0; i<=6; i++){
-			if (digitalRead(pin[8]))
-				break;
 			digitalWrite(pin[i],1);
-			usleep(delay*1000);
+			sleep(1);
 			digitalWrite(pin[i],0);
 		}
-		for(int j=7; j>=1; j--){
-			if (digitalRead(pin[8]))
-                                break;
+		for(int j=7; j<=1; j++){
 			digitalWrite(pin[j],1);
-			usleep(delay*1000);
+			sleep(1);
 			digitalWrite(pin[j],0);
 		}
 	}while(digitalRead(pin[8])==0);
