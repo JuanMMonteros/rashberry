@@ -1,4 +1,8 @@
 #include <sys/mman.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
 #define BCM2835_PERI_BASE 0xFE000000
 #define GPIO_BASE (BCM2835_PERI_BASE + 0x200000)
 volatile unsigned int *gpio; //Pointer to base of gpio
@@ -28,8 +32,8 @@ close(mem_fd);
 void pinMode(int pin, int function) {
 int reg = pin/10;
 int offset = (pin%10)*3;
-GPFSEL[reg] & = ~((0b111 & ~function) << offset);
-GPFSEL[reg] | = ((0b111 & function) << offset);
+GPFSEL[reg] &= ~((0b111 & ~function) << offset);
+GPFSEL[reg] |= ((0b111 & function) << offset);
 }
 void digitalWrite(int pin, int val) {
 int reg = pin / 32;
@@ -41,3 +45,4 @@ int digitalRead(int pin) {
 int reg = pin / 32;
 int offset = pin % 32;
 return (GPLEV[reg] >> offset) & 0x00000001;
+}

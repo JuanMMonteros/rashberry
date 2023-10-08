@@ -53,9 +53,11 @@ int main (){
 	inicioLuces();
     dato luz[8]={1,2,4,8,16,32,64,128};
     while(1){
-        for(int i=0;i<8;i++){
-            carga(luz[i]);
-            usleep(1000*500);
+        for(char i=0;i<256;i++){
+			dato lu;
+			lu.carga= i;
+            carga(lu);
+            usleep(1000*1000);
             }
         }
 	}

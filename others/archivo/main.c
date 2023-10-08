@@ -25,7 +25,9 @@ int main() {
     // Determina cuántas líneas hay en el archivo (cada línea representa un elemento)
     int numElementos = 0;
     char ch;
-    while ((ch = fgetc(archivo)) != EOF) {
+    
+    while (ftell(archivo) != SEEK_END) {
+        ch = fgetc(archivo);
         if (ch == '\n') {
             numElementos++;
         }
