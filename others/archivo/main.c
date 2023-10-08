@@ -24,15 +24,12 @@ int main() {
 
     // Determina cuántas líneas hay en el archivo (cada línea representa un elemento)
     int numElementos = 0;
-    char ch;
+    char ch=0;
+	while((ch=fgetc(archivo)) != 255){  //255=EOF
+		if(ch=='\n')
+			numElementos++;
+	}    
     
-    while (ftell(archivo) != SEEK_END) {
-        ch = fgetc(archivo);
-        if (ch == '\n') {
-            numElementos++;
-        }
-    }
-
     // Vuelve al inicio del archivo
     fseek(archivo, 0, SEEK_SET);
 
