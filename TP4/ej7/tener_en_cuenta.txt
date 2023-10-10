@@ -1,0 +1,26 @@
+**Habilitar el puerto I2C en Raspbian**
+Esto se puede hacer por consola
+ $ sudo raspi-config 
+o en forma gráfica
+Interfacing Options -> I2C Enable/Disable
+
+Instalar las herramientas I2C, usadas para debuggear los dispositivos I2C por linea de comandos:
+
+$ sudo apt-get install i2c-tools 
+$ sudo apt-get update 
+Detecando los dispositivos conectados al bus I2C (ID de los dispositivos):
+
+  $ i2cdetect -y 0
+  $ i2cdetect -y 1
+Instalar wiringPi:
+
+  $ cd
+  $ git clone git://git.drogon.net/wiringPi
+  $ cd ~/wirinPi
+  $ ./build 
+compilando wiringPI
+
+  $ gcc -o ejemplo ejemplo.c -lwiringPi 
+corriendo ejemplo
+
+  sudo ./ejemplo 
