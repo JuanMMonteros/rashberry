@@ -55,20 +55,22 @@ void LEDsOFF() {
 
 // consulata la condicion para terminar el bucle
 int conditionEND(){
-        return 0;
+        return digitalRead(17);
 }
 
 
 //funcion que produce bucle de juego de luces 
 void bucleLEDs (struct LedField *leds,int bucle){
-        for (int i = 0; i < bucle; ++i){
-                // Llamar a la función para imprimir el estado de los LEDs por consola
-            imprimirEstadoLEDs(leds[i]);
-                // Llamar a la función para imprimir el estado de los LEDs por GPIO  
-            GPIOEstadoLEDs(leds[i]);
-	    if( conditionEND() )
-		break;
-        }
+        while(!conditionEND()){
+		for (int i = 0; i < bucle; ++i){
+                	// Llamar a la función para imprimir el estado de los LEDs por consola
+            		imprimirEstadoLEDs(leds[i]);
+                	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
+            		GPIOEstadoLEDs(leds[i]);
+	    		if( conditionEND() )
+			break;
+                }
+         }
 }
 
 //estado correcto de pines GPIO
@@ -82,6 +84,7 @@ void pinINIT(){
         pinMode(20,OUTPUT);
         pinMode(21,OUTPUT);
         pinMode(26,OUTPUT);
+	pinMode(17,INPUT);
 }
 
 
