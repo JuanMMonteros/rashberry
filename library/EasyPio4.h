@@ -1,4 +1,9 @@
 #include <sys/mman.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 #define BCM2835_PERI_BASE 0xFE000000
 #define GPIO_BASE (BCM2835_PERI_BASE + 0x200000)
 volatile unsigned int *gpio; //Pointer to base of gpio
@@ -41,45 +46,50 @@ int digitalRead(int pin) {
 int reg = pin / 32;
 int offset = pin % 32;
 return (GPLEV[reg] >> offset) & 0x00000001;
-
-void uartInit ( int baud ) {
- uintfb = 12000000/ baud ; // 3 MHz UART c l o c k4 pinMode (14 , ALT0) ; // TX
- pinMode (15 , ALT0) ; // RX
- pinMode (14 , ALT0) ; //Tx
- UART_IBRD = f b >> 6 ; // 6 f r e c i o n a r i o s y 16
- UART_FBRD = f b & 6 3;
- UART_LCRHbits.WLEN = 3 ; // 8N1 , s i n FIFO y s i n
-
-UART_CRbits .UARTEN = 1 ; // Enable u a r t
- }
-
- char getChar(void) {
-while (UART_Frbits.RXFE) ; // Espera h a s t a t e n e r un
-     dato −> RXFE==0
-return UART_DRbits.DATA;
 }
 
-void putChar( char c ) {
-while (!UART_Frbits.TXFE) ; // Espera h a s t a poder
-enviar −> TXFE==1
-UART_DRbits.DATA = c ;
+#define UART_BASE  0xFE201000 // Base address for UART
+#define UART_DR *(volatile unsigned *)(UART_BASE)
+#define UART_FR *(volatile unsigned *)(UART_BASE + 0x18)
+#define UART_IBRD *(volatile unsigned *)(UART_BASE + 0x24)
+#define UART_FBRD *(volatile unsigned *)(UART_BASE + 0x28)
+#define UART_LCRH *(volatile unsigned *)(UART_BASE + 0x2C)
+#define UART_CR *(volatile unsigned *)(UART_BASE + 0x30)
+
+void uartInit(int baud) {
+    uint fb = 12000000 / baud; // 3 MHz UART clock
+    pinMode(14, ALT0); // TX
+    pinMode(15, ALT0); // RX
+    UART_IBRD = fb >> 6; // 6 Fract, 16 Int bits of BRD
+    UART_FBRD = fb & 63;
+    UART_LCRH = (3 << 5); // 8 Data, 1 Stop, no Parity
+    UART_CR = (1 << 0) | (1 << 8) | (1 << 9); // Enable uart, TX, RX
+}
+
+char getCharSerial(void) {
+    while (UART_FR & (1 << 4)); // Wait until data is available
+    return UART_DR; // Return char from serial port
+}
+
+void putCharSerial(char c) {
+    while (UART_FR & (1 << 5)); // Wait until ready to transmit
+    UART_DR = c; // Send char to serial port
 }
 
 #define MAX_STR_LEN 80
-3
-4 void getStr(char ∗str) {
-5 int i=0;
-6 do{
-7 str[i] = getChar();
-8 } while ( ( str[i ++]!= '\r' ) && (i<MAX_STR_LEN));
-9 str[i−1]=0;
-10}
-11
-12 void putStr( char ∗str) {
-13 int i = 0 ;
-14 while (str[i]!=0){
-15 putChar(str[ i++]);
-16 }
-17 }
 
+void getStrSerial(char *str) {
+    int i = 0;
+    do { // Read an entire string until
+        str[i] = getCharSerial(); // Carriage return
+    } while ((str[i++] != '\r') && (i < MAX_STR_LEN));
+    str[i - 1] = 0; // Null-terminate the string
+}
+
+void putStrSerial(char *str) {
+    int i = 0;
+    while (str[i] != 0) { // Iterate over string
+        putCharSerial(str[i++]); // Send each character
+    }
+}
 
