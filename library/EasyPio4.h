@@ -30,11 +30,12 @@ close(mem_fd);
 #define GPLEV ((volatile unsigned int *) (gpio + 13))
 #define INPUT 0
 #define OUTPUT 1
+#define ALT0 4
 void pinMode(int pin, int function) {
 int reg = pin/10;
 int offset = (pin%10)*3;
-GPFSEL[reg] & = ~((0b111 & ~function) << offset);
-GPFSEL[reg] | = ((0b111 & function) << offset);
+GPFSEL[reg] &= ~((0b111 & ~function) << offset);
+GPFSEL[reg] |= ((0b111 & function) << offset);
 }
 void digitalWrite(int pin, int val) {
 int reg = pin / 32;
