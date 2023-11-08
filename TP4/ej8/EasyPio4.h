@@ -58,13 +58,13 @@ return (GPLEV[reg] >> offset) & 0x00000001;
 #define UART_CR *(volatile unsigned *)(UART_BASE + 0x30)
 
 void uartInit(int baud) {
-    uint fb = 12000000 / baud; // 3 MHz UART clock
+   u_int32_t fb = 3000000 / baud; // Ajusta este cálculo según la frecuencia real del reloj UART
     pinMode(14, ALT0); // TX
     pinMode(15, ALT0); // RX
-    UART_IBRD = fb >> 6; // 6 Fract, 16 Int bits of BRD
-    UART_FBRD = fb & 63;
+    UART_IBRD = baud / 64;
+    UART_FBRD = baud % 64;
     UART_LCRH = (3 << 5); // 8 Data, 1 Stop, no Parity
-    UART_CR = (1 << 0) | (1 << 8) | (1 << 9); // Enable uart, TX, RX
+    UART_CR = 0x301; 
 }
 
 char getCharSerial(void) {

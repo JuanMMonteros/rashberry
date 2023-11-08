@@ -8,9 +8,9 @@ struct termios * term_old,term_new;
 wiringPiSetup();
 int serial_port;
 
-serial_port = serialOpen("/dev/tty0",9600);
-tcgetattr(serial_port,term_old);
-term_old->c_cflag |= CS8;
-tcsetattr(serial_port,TCSANOW,term_old);
+serial_port = serialOpen("/dev/serial0",9600);
+char a='a';
+serialFlush(seral_port);
+serialPuts(serial_port,&a);
  return 0;
 }
