@@ -1,6 +1,8 @@
 #variables
 OBJECTS = main.o
+# HEADERS = 
 NAME = ejecutable
+
 
 
 all: ejecutable run
@@ -16,6 +18,7 @@ ejecutable: $(OBJECTS)
 
 #crear objetos y unir sus librerias
 #si no se le indica como make utilizara sus reglas implisitas, es decir sabe como crear objetos
+#ahora si ese objeto requiere algo particular se recomienda aclarar
 
 main.o: main.c
 
