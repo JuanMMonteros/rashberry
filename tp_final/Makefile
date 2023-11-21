@@ -9,7 +9,7 @@ all: ejecutable run
 
 #corre programa
 run: ejecutable
-	.\$(NAME)
+	./$(NAME)
 
 #compila el ejecutable linkeando los .o
 ejecutable: $(OBJECTS)
