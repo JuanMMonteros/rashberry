@@ -12,7 +12,7 @@ run: ejecutable
 	./$(NAME)
 
 #compila el ejecutable linkeando los .o
-ejecutable: $(OBJECTS)
+ejecutable: $(OBJECTS) $(HEADERS)
 	gcc -o $(NAME) $(OBJECTS) $(HEADERS)
 
 
