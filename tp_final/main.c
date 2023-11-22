@@ -23,12 +23,14 @@ struct termios term_orig;
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
 	
+	clean_consol();  //limpia la consola
 	if( password() ){ //contraseña nesesaria para ejecutar programa
 		printf("Funcionamiento local (l) o remoto (r): ");
 		switch ( read_keyboard() ){ //case para modo en remoto o local
 			case 'l':
 			case 'L': //programa en local
-				menu_local();
+				clean_consol();  //limpia la consola
+				menu_local();    //llama al menu de modo local
 				break;
 			case 'r':
 			case 'R': //programa en remoto
