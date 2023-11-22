@@ -34,7 +34,7 @@ int main() {
             }
         } else {
             // No se presionó ninguna tecla
-            printf("nada che");
+            //printf("nada che");
             // Realiza otras tareas
         }
     }
