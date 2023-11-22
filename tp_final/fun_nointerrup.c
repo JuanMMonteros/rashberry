@@ -5,6 +5,7 @@
 
 #include "my_header.h"
 
+//esta funcion lee un caracter sin espera activa
 char key_ni() {
     fd_set rfds;
     struct timeval tv;
@@ -40,6 +41,14 @@ int condition_end(){
     switch( key_ni() ){
         case 'f': 
         case 'F': return 1; //condicion salir juego luces
+        default: return 0;
+    }
+}
+
+int up_dw(){
+     switch( key_ni() ){
+        case 'A': return 1;//up
+        case 'B': return -1; //Dw
         default: return 0;
     }
 }
