@@ -8,7 +8,6 @@ int menu_local() {
     int w = 1;
     int c;
     while(w==1){
-	clean_consol();
     	printf("Ingrese numero de la secuencia de luces o exit (e) para salir:\n");
     	c = read_keyboard();
     	switch (c){ //case para juego de luces o salir
@@ -22,6 +21,8 @@ int menu_local() {
 					default: 
 						if ( control_leds( (int)c - 48 ) ) //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
 							printf("Parece que ocurrio un error al ejecutar esa secuencia, prueba nuevamente\n");
+						else
+							clean_consol();
 						break;
 		}
     }
