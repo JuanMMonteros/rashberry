@@ -46,9 +46,14 @@ int condition_end(){
 }
 
 int up_dw(){
-     switch( key_ni() ){
-        case 'A': return 10;//up
-        case 'B': return -10; //Dw
-        default: return 0;
+    if(key_ni=='\x1b'){
+        if(key_ni()=='['){
+            switch( key_ni() ){
+                case 'A': return 10;//up
+                case 'B': return -10; //Dw
+                default: return 0;
+            }
+        }
     }
+    return 0;
 }
