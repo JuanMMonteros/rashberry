@@ -45,7 +45,7 @@ void GPIOEstadoLEDs(struct LedField leds) {
 	digitalWrite(28,leds.led6);
 	digitalWrite(29,leds.led7);
 	digitalWrite(25,leds.led8);
-	delay(leds.delay);
+	delay(leds.delay + time );
 }
 
 // Función para apagar todos los LEDs por GPIO
@@ -67,8 +67,11 @@ void bucleLEDs (struct LedField *leds,int bucle){
 	int w=1;
         while(w){
 		for (int i = 0; i < bucle; ++i){
+			//ajuste tiempo para los delays
 			time += up_dw();
-			printf("%d",time);
+			if(time<0)       //limita a numeros positivos
+				time=0;
+			
                 	// Llamar a la función para imprimir el estado de los LEDs por consola
             		imprimirEstadoLEDs(leds[i]);
                 	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
