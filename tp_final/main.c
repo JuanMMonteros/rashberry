@@ -6,6 +6,7 @@
 
 #include "my_header.h"
 
+char read_teclado();
 
 
 int main() {
@@ -24,7 +25,7 @@ struct termios term_orig;
 	
 	if( password() ){ //contraseña nesesaria para ejecutar programa
 		printf("Funcionamiento local (l) o remoto (r): ");
-		switch ( getchar() ){ //case para modo en remoto o local
+		switch ( read_teclado() ){ //case para modo en remoto o local
 			case 'l':
 			case 'L': //programa en local
 				control_leds(8);
@@ -32,24 +33,24 @@ struct termios term_orig;
 			case 'r':
 			case 'R': //programa en remoto
 				printf("\nFuncionamiento maestro (m) esclavo (e): ");
-				switch ( getchar() ){ //case para modo remoto maestro o esclavo
+				switch ( read_teclado() ){ //case para modo remoto maestro o esclavo
 					case 'm':
 					case 'M': //modo maestro
-						printf("Dispositivo en modo maestro \n");
+						printf("\nDispositivo en modo maestro \n");
 						break;
 					case 's':
 					case 'S':
 					case 'e':
 					case 'E': //modo esclavo
-						printf("Dispositivo en modo esclavo \n");
+						printf("\nDispositivo en modo esclavo \n");
 						break;
 					default: 
-						printf("Opcion no valida programa terminado \n");
+						printf("\nOpcion no valida programa terminado \n");
 						break;
 				}
 				break;
 			default: 
-				printf("Opcion no valida programa terminado \n");
+				printf("\nOpcion no valida programa terminado \n");
 				break;
 		}
 	}
@@ -60,4 +61,11 @@ struct termios term_orig;
     tcsetattr(STDIN_FILENO, TCSANOW, &term_orig); // Restaura el modo de entrada original
     printf("\n");
     return 0;
+}
+
+char read_teclado(){
+	char c;
+	c =  getchar();
+	printf("%c",c);
+	return c;
 }
