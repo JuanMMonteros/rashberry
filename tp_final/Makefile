@@ -1,5 +1,5 @@
 #variables
-OBJECTS = main.c control_leds.c password.o
+OBJECTS = main.c control_leds.c password.o inttochar.o
 HEADERS = my_header.h
 NAME = ejecutable
 
@@ -24,8 +24,10 @@ ejecutable: $(OBJECTS)
 main.o: main.c my_header.h
 	gcc  -c main.c 
 
-control_leds.o: control_leds.c
+control_leds.o: control_leds.c inttochar.o
 	gcc -c control_leds.c -lwirinPi 
+
+inttochar.o: inttochar.s
 
 password.o: password.c
 
