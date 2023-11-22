@@ -25,7 +25,7 @@ struct termios term_orig;
 	
 	if( password() ){ //contraseña nesesaria para ejecutar programa
 		printf("Funcionamiento local (l) o remoto (r): ");
-		switch ( read_keyboard()) ){ //case para modo en remoto o local
+		switch ( read_keyboard() ){ //case para modo en remoto o local
 			case 'l':
 			case 'L': //programa en local
 				control_leds(8);
