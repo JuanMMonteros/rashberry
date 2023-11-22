@@ -23,7 +23,7 @@ ejecutable: $(OBJECTS)
 main.o: main.c
 
 control_leds.o: control_leds.c
-    gcc -c control_leds.c -lwiringPi 
+	gcc -c control_leds.c -lwirinPi -o control_leds.o
 
 #limpiar
 clean:
