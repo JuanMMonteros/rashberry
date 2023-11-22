@@ -8,6 +8,7 @@ int menu_local() {
     int w = 1;
     int c;
     while(w==1){
+	clean_consol();
     	printf("Ingrese numero de la secuencia de luces o exit (e) para salir:\n");
     	c = read_keyboard();
     	switch (c){ //case para juego de luces o salir
@@ -29,4 +30,7 @@ int menu_local() {
 }
 
 
-
+void clean_consol(){
+	for (int i = 0; i < 50; ++i)
+		printf("\n");
+}
