@@ -1,5 +1,5 @@
 #variables
-OBJECTS = main.o
+OBJECTS = main.o control_leds.o
 # HEADERS = 
 NAME = ejecutable
 
@@ -22,7 +22,7 @@ ejecutable: $(OBJECTS)
 
 main.o: main.c
 
-
+control_leds.o: control_leds.c
 
 #limpiar
 clean:
