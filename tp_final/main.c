@@ -28,5 +28,5 @@ struct termios term_orig;
 	//antes de salir retorna modo de consola
     tcsetattr(STDIN_FILENO, TCSANOW, &term_orig); // Restaura el modo de entrada original
 
-    return 1;
+    return 0;
 }
