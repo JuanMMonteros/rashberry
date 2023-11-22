@@ -3,8 +3,9 @@
 #include <unistd.h>
 #include <sys/select.h>
 
+#include "my_header.h"
 
-int condition_end() {
+char key_ni() {
     fd_set rfds;
     struct timeval tv;
     int retval;
@@ -22,8 +23,8 @@ int condition_end() {
             if (FD_ISSET(STDIN_FILENO, &rfds)) {
                 char c;
                 read(STDIN_FILENO, &c, 1);
-                printf("Tecla presionada: %c\n", c);
-                return 1;
+               // printf("Tecla presionada: %c\n", c);
+                return c;
             }
         } else {
             // No se presionó ninguna tecla
@@ -31,4 +32,13 @@ int condition_end() {
         }
     
 
+}
+
+
+int condition_end(){
+    swhich( key_ni() ){
+        case 'f': 
+        case 'F': return 1; //condicion salir juego luces
+        default: return 0;
+    }
 }
