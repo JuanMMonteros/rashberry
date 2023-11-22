@@ -7,7 +7,7 @@
 
 extern char inttochar (int); //funcion de ensamblador que combierte numeros del 0 al 9 en chars 
 
-int time; //bariable global de tiempo
+int time; //variable global de tiempo
 
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
@@ -68,10 +68,10 @@ void bucleLEDs (struct LedField *leds,int bucle){
         while(w){
 		for (int i = 0; i < bucle; ++i){
 			//ajusta el diley con time que cambia segun teclas y pote
-			time = time + up_dw();
-			if (time < 0) //limite inferior
-				time=0;
-			printf("%d",up_dw() );
+			time= time + up_dw();
+			//if (time < 0) //limite inferior
+				//time=0;
+			printf("%d",time);
                 	// Llamar a la función para imprimir el estado de los LEDs por consola
             		imprimirEstadoLEDs(leds[i]);
                 	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
