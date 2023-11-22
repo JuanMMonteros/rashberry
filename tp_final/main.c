@@ -21,7 +21,8 @@ struct termios term_orig;
 
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
-    control_leds(8);
+	password();
+        control_leds(8);
 
 	//antes de salir retorna modo de consola
     tcsetattr(STDIN_FILENO, TCSANOW, &term_orig); // Restaura el modo de entrada original
