@@ -23,7 +23,7 @@ char key_ni() {
             if (FD_ISSET(STDIN_FILENO, &rfds)) {
                 char c;
                 read(STDIN_FILENO, &c, 1);
-               printf("Tecla presionada: %s\n", (int)c);
+               //printf("Tecla presionada: %c\n", c);
                 return c;
             }
         } else {
