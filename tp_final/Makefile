@@ -1,6 +1,6 @@
 #variables
 OBJECTS = main.o control_leds.o
-# HEADERS = 
+HEADERS = my_header.h
 NAME = ejecutable
 
 
@@ -13,7 +13,7 @@ run: ejecutable
 
 #compila el ejecutable linkeando los .o
 ejecutable: $(OBJECTS)
-	gcc -o $(NAME) $(OBJECTS)
+	gcc -o $(NAME) $(OBJECTS) $(HEADERS)
 
 
 #crear objetos y unir sus librerias
