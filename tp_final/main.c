@@ -31,6 +31,21 @@ struct termios term_orig;
 				break;
 			case 'r':
 			case 'R': //programa en remoto
+				switch ( getchar() ){ //case para modo remoto maestro o esclavo
+					case 'm':
+					case 'M': //modo maestro
+						printf("Dispositivo en modo maestro \n");
+						break;
+					case 's':
+					case 'S':
+					case 'e':
+					case 'E': //modo esclavo
+						printf("Dispositivo en modo esclavo \n");
+						break;
+					default: 
+						printf("Opcion no valida programa terminado \n");
+						break;
+				}
 				break;
 			default: 
 				printf("Opcion no valida programa terminado \n");
