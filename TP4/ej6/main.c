@@ -90,8 +90,12 @@ void pinINIT(){
 
 int main(){
 
+    int juego = 8;
+    char file_name [6]="1.txt";
+    file_name[0]=juego;
+
        // Abre el archivo en modo lectura
-    FILE *archivo = fopen("leds.txt", "r");
+    FILE *archivo = fopen(file_name, "r");
     if (archivo == NULL) {
         printf("Error al abrir el archivo");
         return 1;
