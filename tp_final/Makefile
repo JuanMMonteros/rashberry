@@ -21,7 +21,7 @@ ejecutable: $(OBJECTS)
 #ahora si ese objeto requiere algo particular se recomienda aclarar
 
 main.o: main.c my_header.h
-	gcc  -c main.c my_header.h -o main.o 
+	gcc  -c main.c -o main
 
 control_leds.o: control_leds.c
 	gcc -c control_leds.c -lwirinPi -o control_leds.o
