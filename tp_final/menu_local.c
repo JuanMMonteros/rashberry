@@ -20,7 +20,7 @@ int menu_local() {
 						break;
 					default: 
 						if ( control_leds( (int)c - 48 ) ) //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
-							printf("Parece que ocurrio un error al ejecutar esa secuencia, prueba nuevamente\n");
+							printf("\nUps!! esa secuencia no es ejecutable, intenta nuevamente\n\n");
 						else
 							clean_consol();
 						break;
