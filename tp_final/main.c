@@ -33,7 +33,7 @@ struct termios term_orig;
 			case 'R': //programa en remoto
 				break;
 			default: 
-				printf("Opcion no valida programa terminado");
+				printf("Opcion no valida programa terminado \n");
 				break;
 		}
 	}
