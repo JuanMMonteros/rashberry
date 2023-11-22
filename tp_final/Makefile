@@ -9,6 +9,7 @@ all: ejecutable run
 
 #corre programa
 run: ejecutable
+	clean
 	-./$(NAME)
 
 #compila el ejecutable linkeando los .o
