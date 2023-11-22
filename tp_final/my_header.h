@@ -6,5 +6,6 @@ int password();
 int menu_local();
 char read_keyboard();
 void clean_consol();
+int condition_end();
 
 #endif
