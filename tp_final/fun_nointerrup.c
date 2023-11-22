@@ -36,7 +36,7 @@ char key_ni() {
 
 
 int condition_end(){
-    swhich( key_ni() ){
+    switch( key_ni() ){
         case 'f': 
         case 'F': return 1; //condicion salir juego luces
         default: return 0;
