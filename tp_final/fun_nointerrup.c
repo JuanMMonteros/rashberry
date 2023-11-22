@@ -46,7 +46,7 @@ int condition_end(){
 }
 
 int up_dw(){
-    if(key_ni=='\x1b'){
+    if(key_ni()=='\x1b'){
         if(key_ni()=='['){
             switch( key_ni() ){
                 case 'A': return 10;//up
