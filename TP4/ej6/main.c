@@ -90,9 +90,9 @@ void pinINIT(){
 
 int main(){
 
-    int juego = 8;
+    int number = 8;
     char file_name [6]="1.txt";
-    file_name[0]=juego;
+    file_name[0]=(char)(number + 48);
 
        // Abre el archivo en modo lectura
     FILE *archivo = fopen(file_name, "r");
