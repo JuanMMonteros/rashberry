@@ -41,7 +41,7 @@ void GPIOEstadoLEDs(struct LedField leds) {
 	digitalWrite(20,leds.led6);
 	digitalWrite(21,leds.led7);
 	digitalWrite(26,leds.led8);
-	delay(leds.delay);
+	delay(leds.delay * 1000);
 }
 
 // Función para apagar todos los LEDs por GPIO
