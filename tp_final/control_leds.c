@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "easyPIO.h"
+#include <wiringPi.h>
 
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
