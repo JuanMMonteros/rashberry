@@ -1,5 +1,5 @@
 #include <wiringPi.h>
-leds[8]={23,24,25,12,16,20,21,16}
+int leds[8]={23,24,25,12,16,20,21,16}
 int main(){
 wiringPiSetup();
 for(int i=0;i<8;i++){
