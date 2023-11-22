@@ -7,7 +7,7 @@
 
 extern char inttochar (int); //funcion de ensamblador que combierte numeros del 0 al 9 en chars 
 
-int time=0; //bariable global de tiempo
+int time; //bariable global de tiempo
 
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
@@ -99,6 +99,7 @@ void pinINIT(){
 
 
 int control_leds(int number){
+    time=0; //valor de inicio
 
     char file_name [6]="1.txt";
     file_name[0]= inttochar(number);
