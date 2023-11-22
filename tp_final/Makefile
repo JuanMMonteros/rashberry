@@ -28,4 +28,4 @@ control_leds.o: control_leds.c
 
 #limpiar
 clean:
-	rm -f $(NAME) *.o
+	rm -f $(NAME) *.o *.gch
