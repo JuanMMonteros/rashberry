@@ -28,7 +28,7 @@ struct termios term_orig;
 		switch ( read_keyboard() ){ //case para modo en remoto o local
 			case 'l':
 			case 'L': //programa en local
-				control_leds(8);
+				menu_local();
 				break;
 			case 'r':
 			case 'R': //programa en remoto
