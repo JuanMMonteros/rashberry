@@ -32,7 +32,7 @@ void imprimirEstadoLEDs(struct LedField leds) {
     leds.led6 ? printf("[O]") : printf("[x]") ;
     leds.led7 ? printf("[O]") : printf("[x]") ;
     leds.led8 ? printf("[O]") : printf("[x]") ;
-    printf("\n");
+    printf(" delay=%dmS \n",(leds.delay + time) );
 }
 
 // Función para imprimir el estado de los LEDs por GPIO
