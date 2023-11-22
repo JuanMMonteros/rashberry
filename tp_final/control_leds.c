@@ -33,32 +33,32 @@ void imprimirEstadoLEDs(struct LedField leds) {
 
 // Función para imprimir el estado de los LEDs por GPIO
 void GPIOEstadoLEDs(struct LedField leds) {
-	digitalWrite(23,leds.led1);
-	digitalWrite(24,leds.led2);
-	digitalWrite(25,leds.led3);
-	digitalWrite(12,leds.led4);
-	digitalWrite(16,leds.led5);
-	digitalWrite(20,leds.led6);
-	digitalWrite(21,leds.led7);
-	digitalWrite(26,leds.led8);
+	digitalWrite(4,leds.led1);
+	digitalWrite(5,leds.led2);
+	digitalWrite(6,leds.led3);
+	digitalWrite(26,leds.led4);
+	digitalWrite(27,leds.led5);
+	digitalWrite(28,leds.led6);
+	digitalWrite(29,leds.led7);
+	digitalWrite(25,leds.led8);
 	delay(leds.delay);
 }
 
 // Función para apagar todos los LEDs por GPIO
 void LEDsOFF() {
-	digitalWrite(23,0);
-	digitalWrite(24,0);
-	digitalWrite(25,0);
-	digitalWrite(12,0);
-	digitalWrite(16,0);
-	digitalWrite(20,0);
-	digitalWrite(21,0);
+	digitalWrite(4,0);
+	digitalWrite(5,0);
+	digitalWrite(6,0);
 	digitalWrite(26,0);
+	digitalWrite(27,0);
+	digitalWrite(28,0);
+	digitalWrite(29,0);
+	digitalWrite(25,0);
 }
 
 // consulata la condicion para terminar el bucle
 int conditionEND(){
-        return digitalRead(17);
+        return digitalRead(0);
 }
 
 
@@ -79,15 +79,15 @@ void bucleLEDs (struct LedField *leds,int bucle){
 //estado correcto de pines GPIO
 void pinINIT(){
         wiringPiSetup();
-        pinMode(23,OUTPUT);
-        pinMode(24,OUTPUT);
-        pinMode(25,OUTPUT);
-        pinMode(12,OUTPUT);
-        pinMode(16,OUTPUT);
-        pinMode(20,OUTPUT);
-        pinMode(21,OUTPUT);
+        pinMode(4,OUTPUT);
+        pinMode(5,OUTPUT);
+        pinMode(6,OUTPUT);
         pinMode(26,OUTPUT);
-	pinMode(17,INPUT);
+        pinMode(27,OUTPUT);
+        pinMode(28,OUTPUT);
+        pinMode(29,OUTPUT);
+        pinMode(25,OUTPUT);
+	pinMode(0,INPUT);
 }
 
 
