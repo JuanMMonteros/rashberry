@@ -7,7 +7,6 @@
 
 extern char inttochar (int); //funcion de ensamblador que combierte numeros del 0 al 9 en chars 
 
-static int time_d; //variable global de tiemp
 
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
@@ -45,7 +44,7 @@ void GPIOEstadoLEDs(struct LedField leds) {
 	digitalWrite(28,leds.led6);
 	digitalWrite(29,leds.led7);
 	digitalWrite(25,leds.led8);
-	delay(leds.delay + time_d);
+	delay(leds.delay);
 }
 
 // Función para apagar todos los LEDs por GPIO
@@ -67,11 +66,7 @@ void bucleLEDs (struct LedField *leds,int bucle){
 	int w=1;
         while(w){
 		for (int i = 0; i < bucle; ++i){
-			//ajusta el diley con time que cambia segun teclas y pote
-			time_d += up_dw();
-			//if (time_d < 0) //limite inferior
-				//time_d=0;
-			printf("%d",time_d );
+			printf("%d",up_dw());
                 	// Llamar a la función para imprimir el estado de los LEDs por consola
             		imprimirEstadoLEDs(leds[i]);
                 	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
@@ -99,7 +94,6 @@ void pinINIT(){
 
 
 int control_leds(int number){
-    time_d=0; //valor de inicio
 
     char file_name [6]="1.txt";
     file_name[0]= inttochar(number);
