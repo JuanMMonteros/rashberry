@@ -5,6 +5,8 @@
 
 #include "my_header.h"
 
+extern char inttochar (int); //funcion de ensamblador que combierte numeros del 0 al 9 en chars 
+
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
     unsigned char led1 : 1;
@@ -94,7 +96,7 @@ void pinINIT(){
 int control_leds(int number){
 
     char file_name [6]="1.txt";
-    file_name[0]=(char)(number + 48);
+    file_name[0]= inttochar(number);
 
        // Abre el archivo en modo lectura
     FILE *archivo = fopen(file_name, "r");
