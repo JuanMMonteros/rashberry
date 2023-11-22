@@ -3,6 +3,8 @@
 #include <wiringPi.h>
 #include <unistd.h>
 
+#include "my_header.h"
+
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
     unsigned char led1 : 1;
