@@ -4,6 +4,9 @@
 #include <unistd.h>
 #include <string.h>
 
+#include "my_headr.h"
+
+
 
 int main() {
 struct termios term_orig;
@@ -18,7 +21,7 @@ struct termios term_orig;
 
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
-
+    led_control(8);
 
 	//antes de salir retorna modo de consola
     tcsetattr(STDIN_FILENO, TCSANOW, &term_orig); // Restaura el modo de entrada original
