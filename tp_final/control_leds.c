@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <wiringPi.h>
+#include <unistd.h>
 
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
@@ -75,7 +76,7 @@ void bucleLEDs (struct LedField *leds,int bucle){
 
 //estado correcto de pines GPIO
 void pinINIT(){
-        pioInit();
+        wiringPiSetup();
         pinMode(23,OUTPUT);
         pinMode(24,OUTPUT);
         pinMode(25,OUTPUT);
