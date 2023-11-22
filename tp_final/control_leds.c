@@ -71,7 +71,7 @@ void bucleLEDs (struct LedField *leds,int bucle){
 			time_d += up_dw();
 			//if (time_d < 0) //limite inferior
 				//time_d=0;
-			printf("%d",up_dw() );
+			printf("%d",time_d );
                 	// Llamar a la función para imprimir el estado de los LEDs por consola
             		imprimirEstadoLEDs(leds[i]);
                 	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
