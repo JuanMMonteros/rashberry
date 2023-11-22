@@ -6,7 +6,7 @@
 
 #include "my_header.h"
 
-char read_teclado();
+char read_keyboard();
 
 
 int main() {
@@ -25,32 +25,32 @@ struct termios term_orig;
 	
 	if( password() ){ //contraseña nesesaria para ejecutar programa
 		printf("Funcionamiento local (l) o remoto (r): ");
-		switch ( read_teclado() ){ //case para modo en remoto o local
+		switch ( read_keyboard()) ){ //case para modo en remoto o local
 			case 'l':
 			case 'L': //programa en local
 				control_leds(8);
 				break;
 			case 'r':
 			case 'R': //programa en remoto
-				printf("\nFuncionamiento maestro (m) esclavo (e): ");
-				switch ( read_teclado() ){ //case para modo remoto maestro o esclavo
+				printf("Funcionamiento maestro (m) esclavo (e): ");
+				switch ( read_keyboard() ){ //case para modo remoto maestro o esclavo
 					case 'm':
 					case 'M': //modo maestro
-						printf("\nDispositivo en modo maestro \n");
+						printf("Dispositivo en modo maestro \n");
 						break;
 					case 's':
 					case 'S':
 					case 'e':
 					case 'E': //modo esclavo
-						printf("\nDispositivo en modo esclavo \n");
+						printf("Dispositivo en modo esclavo \n");
 						break;
 					default: 
-						printf("\nOpcion no valida programa terminado \n");
+						printf("Opcion no valida programa terminado \n");
 						break;
 				}
 				break;
 			default: 
-				printf("\nOpcion no valida programa terminado \n");
+				printf("Opcion no valida programa terminado \n");
 				break;
 		}
 	}
@@ -63,9 +63,10 @@ struct termios term_orig;
     return 0;
 }
 
-char read_teclado(){
+//funcion que lee tecla del teclado la imprime y salta de linea 
+char read_keyboard(){
 	char c;
 	c =  getchar();
-	printf("%c",c);
+	printf("%c \n",c);
 	return c;
 }
