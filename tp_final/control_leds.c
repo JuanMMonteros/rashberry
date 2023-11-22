@@ -66,14 +66,17 @@ int conditionEND(){
 
 //funcion que produce bucle de juego de luces 
 void bucleLEDs (struct LedField *leds,int bucle){
-        while(!conditionEND()){
+	int w=1;
+        while(w){
 		for (int i = 0; i < bucle; ++i){
                 	// Llamar a la función para imprimir el estado de los LEDs por consola
             		imprimirEstadoLEDs(leds[i]);
                 	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
             		GPIOEstadoLEDs(leds[i]);
-	    		if( conditionEND() )
-			break;
+	    		if( condition_end() ){
+				w=0;
+				break;
+			}
                 }
          }
 }
