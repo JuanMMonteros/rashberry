@@ -5,5 +5,6 @@ int control_leds(int);
 int password();
 int menu_local();
 char read_keyboard();
+void clean_consol();
 
 #endif
