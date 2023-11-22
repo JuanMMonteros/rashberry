@@ -31,6 +31,7 @@ struct termios term_orig;
 				break;
 			case 'r':
 			case 'R': //programa en remoto
+				printf("\nFuncionamiento maestro (m) esclavo (e): ");
 				switch ( getchar() ){ //case para modo remoto maestro o esclavo
 					case 'm':
 					case 'M': //modo maestro
