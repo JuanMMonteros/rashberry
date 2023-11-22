@@ -1,6 +1,6 @@
 #variables
-OBJECTS = main.o control_leds.o
-#HEADERS = my_header.h
+OBJECTS = main.c control_leds.c
+HEADERS = my_header.h
 NAME = ejecutable
 
 
@@ -13,7 +13,7 @@ run: ejecutable
 
 #compila el ejecutable linkeando los .o
 ejecutable: $(OBJECTS) 
-	gcc -o $(NAME) $(OBJECTS) 
+	gcc -o $(NAME) $(OBJECTS) $(HEADERS) -lwiringPi 
 
 
 #crear objetos y unir sus librerias
@@ -21,10 +21,10 @@ ejecutable: $(OBJECTS)
 #ahora si ese objeto requiere algo particular se recomienda aclarar
 
 main.o: main.c my_header.h
-	gcc  -c main.c -o main
+	gcc  -c main.c 
 
 control_leds.o: control_leds.c
-	gcc -c control_leds.c -lwirinPi -o control_leds.o
+	gcc -c control_leds.c -lwirinPi 
 
 #limpiar
 clean:
