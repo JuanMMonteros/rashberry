@@ -37,7 +37,7 @@ char key_ni() {
 
 
 int condition_end(){
-    printf("  presione (f) para finalizar ");
+    printf("  presione (f) finalizar | flechas tiempo    ");
     switch( key_ni() ){
         case 'f': 
         case 'F': return 1; //condicion salir juego luces
@@ -45,6 +45,7 @@ int condition_end(){
     }
 }
 
+//detecta flechas arriba o abajo
 int up_dw(){
         if(key_ni()=='['){
             switch( key_ni() ){
