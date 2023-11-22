@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <wiringPi.h>
-#include <unistd.h>
+//#include <unistd.h>
 
 #include "my_header.h"
 
@@ -41,7 +41,7 @@ void GPIOEstadoLEDs(struct LedField leds) {
 	digitalWrite(20,leds.led6);
 	digitalWrite(21,leds.led7);
 	digitalWrite(26,leds.led8);
-	usleep(leds.delay * 1000);
+	delay(leds.delay);
 }
 
 // Función para apagar todos los LEDs por GPIO
