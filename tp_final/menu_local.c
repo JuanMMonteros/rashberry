@@ -3,7 +3,6 @@
 
 #include "my_header.h"
 
-char read_keyboard();
 
 int menu_local() {
     int w = 1;
@@ -31,10 +30,3 @@ int menu_local() {
 
 
 
-//funcion que lee tecla del teclado la imprime y salta de linea 
-char read_keyboard(){
-	char c;
-	c =  getchar();
-	printf("%c \n",c);
-	return c;
-}
