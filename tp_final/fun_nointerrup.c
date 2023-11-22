@@ -4,7 +4,7 @@
 #include <sys/select.h>
 
 
-int conditionEND() {
+int condition_end() {
     fd_set rfds;
     struct timeval tv;
     int retval;
