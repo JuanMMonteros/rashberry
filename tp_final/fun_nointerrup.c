@@ -23,11 +23,11 @@ int condition_end() {
                 char c;
                 read(STDIN_FILENO, &c, 1);
                 printf("Tecla presionada: %c\n", c);
-                return 0;
+                return 1;
             }
         } else {
             // No se presionó ninguna tecla
-            return 1;
+            return 0;
         }
     
 
