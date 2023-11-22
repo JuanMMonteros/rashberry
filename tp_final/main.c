@@ -25,12 +25,12 @@ struct termios term_orig;
 	if( password() ){ //contraseña nesesaria para ejecutar programa
 		printf("Funcionamiento local (l) o remoto (r): ");
 		switch ( getchar() ){ //case para modo en remoto o local
-			case "l":
-			case "L": //programa en local
+			case 'l':
+			case 'L': //programa en local
 				control_leds(8);
 				break;
-			case "r":
-			case "R": //programa en remoto
+			case 'r':
+			case 'R': //programa en remoto
 				break;
 			default: 
 				printf("Opcion no valida programa terminado");
