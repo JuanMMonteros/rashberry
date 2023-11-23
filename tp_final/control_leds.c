@@ -170,6 +170,10 @@ int control_leds_file(int number){
     // Libera la memoria utilizada para el vector
     free(leds);
 
+    // Llamar a la función para apagar los LEDs antes de salir
+    LEDsOFF();
+
+
     return 0;
 }
 
