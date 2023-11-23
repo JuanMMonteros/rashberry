@@ -5,9 +5,9 @@
 #include "my_header.h"
 
 
-void jump(int vel,  int vel_flecha,  int salida){
+void jump(int vel,  int vel_flecha){
 	int led[8]={4,5,6,26,27,28,29,25};
-	while(salida!=1){
+	while(1){
 		int k=7;
 		for(int i=0; i<8; i++){
 			if(i!=4){
@@ -15,13 +15,13 @@ void jump(int vel,  int vel_flecha,  int salida){
 				delay((vel+(vel_flecha))*M);
 				digitalWrite(led[i],0);
 			}
-			if(salida==1)
+			if(condition_end() )
 				return;
 			digitalWrite(led[k],1);
 			delay((vel+(vel_flecha))*M);
 			digitalWrite(led[k],0);
 			k--;
-			if(salida==1)
+			if(condition_end() )
 				return;
 		}
 	}
