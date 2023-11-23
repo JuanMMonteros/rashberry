@@ -4,7 +4,7 @@
 
 #include "my_header.h"
 
-
+int timeb=0; //variable global tiempo
 
 void jump(int vel){
 	int led[8]={4,5,6,26,27,28,29,25};
@@ -13,18 +13,18 @@ void jump(int vel){
 		for(int i=0; i<8; i++){
 			if(i!=4){
 				//ajuste tiempo para los delays
-			time += up_dw();
-			if(time<0)       //limita a numeros positivos
-				time=0;
+			timeb += up_dw();
+			if(timeb<0)       //limita a numeros positivos
+				timeb=0;
 				
 				digitalWrite(led[i],1);
-				delay((vel+time)*M);
+				delay((vel+timeb)*M);
 				digitalWrite(led[i],0);
 			}
 			if(condition_end() )
 				return;
 			digitalWrite(led[k],1);
-			delay((vel+time)*M);
+			delay((vel+timeb)*M);
 			digitalWrite(led[k],0);
 			k--;
 			if(condition_end() )
