@@ -7,7 +7,6 @@
 
 extern char inttochar (int); //funcion de ensamblador que combierte numeros del 0 al 9 en chars 
 
-int time=0; //variable global tiempo
 
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
