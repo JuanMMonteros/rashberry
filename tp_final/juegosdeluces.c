@@ -5,6 +5,7 @@
 #include "my_header.h"
 
 void act_time();
+void text(int vel,char *name);
 
 int timeb=0; //variable global tiempo
 
@@ -15,6 +16,7 @@ void jump(int vel){
 		for(int i=0; i<8; i++){
 			if(i!=4){
 				act_time();
+				text(int vel,"jump");
 				
 				digitalWrite(led[i],1);
 				delay((vel+timeb)*M);
@@ -38,6 +40,7 @@ void bounce(int vel){
 		for (int i=0; i<8; i++){
 			for(int j=(8-i);j>0; j--){
 				act_time();
+				text(int vel,"jump");
 				
 				digitalWrite((led[j]-1),1);
 				delay((vel+timeb)*M);
@@ -47,6 +50,7 @@ void bounce(int vel){
 			}
 			for(int k=0; k<(7-i);k++){
 				act_time();
+				text(int vel,"jump");
 				
 				digitalWrite(led[k],1);
 				delay((vel+timeb)*M);
@@ -58,12 +62,20 @@ void bounce(int vel){
 	}
 }
 
+
 void act_time(){
 	//ajuste tiempo para los delays
 	timeb += up_dw();
 	if(timeb<0)       //limita a numeros positivos
 		timeb=0;
 }
-	
+
+
+void text(int vel,char *name ){
+	void clean_consol();
+	printf("Juego de luces por algoritmo - %s \n",name);
+	printf("(f) salir | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
+	printf("delay = %dmS",(vel+t));
+}
 
 
