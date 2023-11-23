@@ -163,14 +163,12 @@ int control_leds_file(int number){
     // Ahora el vector "leds" contiene los datos leídos desde el archivo
 
     // Realizar operaciones con los datos aquí
-    pinINIT();
+
     bucleLEDs (leds,numElementos);
 
     // Libera la memoria utilizada para el vector
     free(leds);
 
-    // Llamar a la función para apagar los LEDs antes de salir
-    LEDsOFF();
     return 0;
 }
 
@@ -181,6 +179,7 @@ int control_leds(int number){
 			break;
 		default: return control_leds_file(number);
 	}
+	// Llamar a la función para apagar los LEDs antes de salir
 	LEDsOFF();
 	return 0;
 }
