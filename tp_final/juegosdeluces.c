@@ -73,7 +73,7 @@ void act_time(){
 
 void text(int vel,char *name ){
 	static int tem;  //genera un retardo no activo para evitar parpadeos en consola
-	if( tem>20 | timeb>20 ){ //si los dileys son largos el retardo desaparese
+	if( tem>20 | timeb>30 ){ //si los dileys son largos el retardo desaparese
 		tem = 0;
 		clean_consol();
 		printf("Juego de luces por algoritmo - %s \n",name);
