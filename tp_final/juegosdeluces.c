@@ -5,7 +5,7 @@
 #include "my_header.h"
 
 
-void jump(int vel, volatile int vel_flecha, volatile int salida){
+void jump(int vel,  int vel_flecha,  int salida){
 	int led[8]={4,5,6,26,27,28,29,25};
 	while(salida!=1){
 		int k=7;
