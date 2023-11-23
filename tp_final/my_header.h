@@ -16,7 +16,7 @@ int up_dw();
 char read_keyboard();
 
 //juegos luces por algoritmo
-void jump(int vel, volatile int vel_flecha, volatile int salida)
+void jump(int vel, int vel_flecha,  int salida)
 void bounce(int vel, volatile int vel_flecha, volatile int salida)
 
 #endif
