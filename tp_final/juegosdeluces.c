@@ -72,8 +72,8 @@ void act_time(){
 
 
 void text(int vel,char *name ){
-	static int tem;
-	if(tem>30){
+	static int tem;  //genera un retardo no activo para evitar parpadeos en consola
+	if(tem>20){
 		tem = 0;
 		clean_consol();
 		printf("Juego de luces por algoritmo - %s \n",name);
