@@ -16,7 +16,7 @@ void jump(int vel){
 		for(int i=0; i<8; i++){
 			if(i!=4){
 				act_time();
-				text(int vel,"jump");
+				text(vel,"jump");
 				
 				digitalWrite(led[i],1);
 				delay((vel+timeb)*M);
@@ -40,7 +40,7 @@ void bounce(int vel){
 		for (int i=0; i<8; i++){
 			for(int j=(8-i);j>0; j--){
 				act_time();
-				text(int vel,"jump");
+				text(vel,"bounce");
 				
 				digitalWrite((led[j]-1),1);
 				delay((vel+timeb)*M);
@@ -50,7 +50,7 @@ void bounce(int vel){
 			}
 			for(int k=0; k<(7-i);k++){
 				act_time();
-				text(int vel,"jump");
+				text(vel,"bounce");
 				
 				digitalWrite(led[k],1);
 				delay((vel+timeb)*M);
