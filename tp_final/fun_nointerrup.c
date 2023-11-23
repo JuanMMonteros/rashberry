@@ -43,7 +43,7 @@ int condition_end(){
         case 'F': return 1; //condicion salir juego luces
         case 'p': 
         case 'P': printf("\nprecione cualquier tecla para continuar \n"); //condicion pausa
-                  scanf();//espera a tecla precionada si o si
+                  getchar();//espera a tecla precionada si o si
         default: return 0;
     }
 }
