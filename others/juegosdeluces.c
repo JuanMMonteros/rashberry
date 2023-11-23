@@ -33,7 +33,7 @@ void bounce(int vel, volatile int vel_flecha, volatile int salida){
 				if(salida==1)
 					return;
 			}
-			for(int k=0; k<(7-i);j++){
+			for(int k=0; k<(7-i);k++){
 				digitalWrite(k,1);
 				delayMicroseconds((vel+(vel_flecha))*M);
 				digitalWrite(k,0);
