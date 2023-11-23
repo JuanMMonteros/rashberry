@@ -72,7 +72,7 @@ void act_time(){
 
 
 void text(int vel,char *name ){
-	void clean_consol();
+	clean_consol();
 	printf("Juego de luces por algoritmo - %s \n",name);
 	printf("(f) salir | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
 	printf("delay = %dmS",(vel+timeb));
