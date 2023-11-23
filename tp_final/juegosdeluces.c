@@ -77,7 +77,7 @@ void text(int vel,char *name ){
 		tem = 0;
 		clean_consol();
 		printf("Juego de luces por algoritmo - %s \n",name);
-		printf("(f) salir | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
+		printf("(f) salir | (p) pausa | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
 		printf("delay = %d mS\n",(vel+timeb));
 	}
 	tem++;
