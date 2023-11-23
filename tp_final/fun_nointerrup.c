@@ -41,6 +41,9 @@ int condition_end(){
     switch( key_ni() ){
         case 'f': 
         case 'F': return 1; //condicion salir juego luces
+        case 'p': 
+        case 'P': printf("\nprecione cualquier tecla para continuar \n"); //condicion pausa
+                  scanf();//espera a tecla precionada si o si
         default: return 0;
     }
 }
@@ -56,3 +59,5 @@ int up_dw(){
         }
     return 0;
 }
+
+
