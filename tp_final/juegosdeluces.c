@@ -40,7 +40,7 @@ void bounce(int vel){
 				act_time();
 				
 				digitalWrite((led[j]-1),1);
-				delay((vel+(vel_flecha))*M);
+				delay((vel+timeb)*M);
 				digitalWrite((led[j]-1),0);
 				if(condition_end() )
 					return;
@@ -49,7 +49,7 @@ void bounce(int vel){
 				act_time();
 				
 				digitalWrite(led[k],1);
-				delay((vel+(vel_flecha))*M);
+				delay((vel+timeb)*M);
 				digitalWrite(led[k],0);
 				if(condition_end() )
 					return;
