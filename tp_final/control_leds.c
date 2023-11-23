@@ -178,7 +178,7 @@ int control_leds(int number){
 	switch(number){
 		case 1:jump(200,0,0);
 			break;
-		default: return control_leds_file(number)
+		default: return control_leds_file(number);
 	}
 	return 0;
 }
