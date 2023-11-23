@@ -98,7 +98,7 @@ void pinINIT(){
 }
 
 
-int control_leds(int number){
+int control_leds_file(int number){
 
     char file_name [6]="1.txt";
     file_name[0]= inttochar(number);
@@ -172,4 +172,13 @@ int control_leds(int number){
     // Llamar a la función para apagar los LEDs antes de salir
     LEDsOFF();
     return 0;
+}
+
+int control_leds(int number){
+	switch(number){
+		case 1:jump(200,0,0);
+			break;
+		default: return control_leds_file(number)
+	}
+	return 0;
 }
