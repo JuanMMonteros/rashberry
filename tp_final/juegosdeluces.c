@@ -4,7 +4,7 @@
 
 #include "my_header.h"
 
-int time=0; //variable global tiempo
+
 
 void jump(int vel){
 	int led[8]={4,5,6,26,27,28,29,25};
