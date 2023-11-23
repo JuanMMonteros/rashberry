@@ -73,8 +73,8 @@ void act_time(){
 
 void text(int vel,char *name ){
 	static int tem;
-	if(time != tem){
-		tem = time;
+	if(timeb != tem){
+		tem = timeb;
 		clean_consol();
 		printf("Juego de luces por algoritmo - %s \n",name);
 		printf("(f) salir | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
