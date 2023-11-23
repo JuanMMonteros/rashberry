@@ -12,13 +12,13 @@ void jump(int vel, volatile int vel_flecha, volatile int salida){
 		for(int i=0; i<8; i++){
 			if(i!=4){
 				digitalWrite(led[i],1);
-				delayMicroseconds((vel+(vel_flecha))*M);
+				delay((vel+(vel_flecha))*M);
 				digitalWrite(led[i],0);
 			}
 			if(salida==1)
 				return;
 			digitalWrite(led[k],1);
-			delayMicroseconds((vel+(vel_flecha))*M);
+			delay((vel+(vel_flecha))*M);
 			digitalWrite(led[k],0);
 			k--;
 			if(salida==1)
@@ -33,14 +33,14 @@ void bounce(int vel, volatile int vel_flecha, volatile int salida){
 		for (int i=0; i<8; i++){
 			for(int j=(8-i);j>0; j--){
 				digitalWrite((led[j]-1),1);
-				delayMicroseconds((vel+(vel_flecha))*M);
+				delay((vel+(vel_flecha))*M);
 				digitalWrite((led[j]-1),0);
 				if(salida==1)
 					return;
 			}
 			for(int k=0; k<(7-i);k++){
 				digitalWrite(led[k],1);
-				delayMicroseconds((vel+(vel_flecha))*M);
+				delay((vel+(vel_flecha))*M);
 				digitalWrite(led[k],0);
 				if(salida==1)
 					return;
