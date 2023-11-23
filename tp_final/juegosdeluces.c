@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <wiringPi.h>
-#define M 1000
+#define M 1
 
 #include "my_header.h"
 
