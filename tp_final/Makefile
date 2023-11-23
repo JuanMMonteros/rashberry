@@ -28,6 +28,7 @@ control_leds.o: control_leds.c inttochar.o
 	gcc -c control_leds.c -lwirinPi 
 
 juegosdeluces.o:juegosdeluces.c
+	gcc -c juegosdeluces.c -lwirinPi 
 
 inttochar.o: inttochar.s
 
