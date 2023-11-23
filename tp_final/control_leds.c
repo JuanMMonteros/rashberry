@@ -175,7 +175,7 @@ int control_leds_file(int number){
 int control_leds(int number){
 	 pinINIT();
 	switch(number){
-		case 1:jump(200,1,condition_end() );
+		case 1:jump(200,1);
 			break;
 		default: return control_leds_file(number);
 	}
