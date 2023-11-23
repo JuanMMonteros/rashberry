@@ -72,7 +72,7 @@ void bucleLEDs (struct LedField *leds,int bucle){
 			if(time<0)       //limita a numeros positivos
 				time=0;
 
-			printf("  presione (f) finalizar | flechas tiempo    ");
+			printf("(f) finalizar |(p) pausa | flechas tiempo    ");
                 	// Llamar a la función para imprimir el estado de los LEDs por consola
             		imprimirEstadoLEDs(leds[i]);
                 	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
