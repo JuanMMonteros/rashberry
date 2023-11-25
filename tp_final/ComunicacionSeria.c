@@ -13,10 +13,14 @@ int sync(){
   serialPutchar(fd,test);
   resive=serialGetchar(fd);
   if(test==resive){
+  
   fflush (fd) ;
   printf("Error\n");
   return 0;
-  }else 
+  }else{
+    printf("el Caracter Recivido fue %c ",resive);
+  } 
+
   return 1;
 }
   
