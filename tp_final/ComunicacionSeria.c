@@ -14,7 +14,7 @@ int sync(){
   resive=serialGetchar(fd);
   if(test==resive){
   
-  fflush (fd) ;
+  Serialflush(fd);
   printf("Error\n");
   return 0;
   }else{
