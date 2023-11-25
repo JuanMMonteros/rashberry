@@ -5,6 +5,8 @@ int control_leds(int);
 int password();
 int menu_local();
 
+//leer ADC
+int adc_load();
 //limpia consola
 void clean_consol();
 
