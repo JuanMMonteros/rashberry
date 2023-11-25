@@ -9,9 +9,12 @@
 int sync(){
   int fd= serialOpen("/dev/serial0",9600);
   char test='T';
+  char resive;
   serialPutchar(fd,test);
-  if(test==serialGetchar (fd)){
+  resive=serialPutchar(fd);
+  if(test==resive){
   fflush (fd) ;
+  printf("Error\n");
   return 0;
   }else 
   return 1;
