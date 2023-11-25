@@ -14,8 +14,8 @@ int sync(){
   resive=serialGetchar(fd);
   if(test==resive){
   
-  serialflush(fd);
-  printf("Error\n");
+  serialFlush(fd);
+  printf("Anda God\n");
   return 0;
   }else{
     printf("el Caracter Recivido fue %c ",resive);
