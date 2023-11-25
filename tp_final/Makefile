@@ -41,8 +41,7 @@ menu_local.o: menu_local.c
 
 fun_nointerrup.o: fun_nointerrup.c
 
-ComunicacionSerial.o: ComunicacionSerial.c
-    gcc -c ComunicacionSerial.c -lwirinPi 
+ComunicacionSerial.o: ComunicacionSeria.c
 
 menu_remoto.o: menu_remoto.c
 
