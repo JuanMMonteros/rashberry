@@ -4,17 +4,12 @@
  int main(){
 wiringPiSetup();
 int serial_port;
-
 serial_port = serialOpen("/dev/serial0",9600);
-int caracter[20];
-for(int i=0;;i++){
-if(caracter[i]!='\0'){
-caracter[i]=serialGetchar(serial_port);
-printf("%c",caracter[i]);}
-else {
-printf("\n");
-i=20;
-}
+fflush(serial_port);
+int caracter[20] ="Hola Mundo";
+
+for(int i=0;i<20;i++){
+serialPutchar(serial_port,caracter[i]);
 }
  return 0;
 }
