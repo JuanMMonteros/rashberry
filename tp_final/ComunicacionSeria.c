@@ -2,24 +2,18 @@
 #include <wiringPi.h>
 #include <wirinfPiSerial.h>
 
-void ModoRemoto();
-void ModoLocal();
-int main void(){
-int selMod;
-WiringPiSetup();
-printf("En que modo deseas trabajar\n0:Modo Remoto\n1: Modo Local");
-scanf("%d",&selMod);
-if(selMod)
-  modoRemoto();
-else
-  ModoLocal();
-return 0;
-}
-void ModoRemoto(){
-int serial_port;
-int luces,vel;
-serial_port = serialOpen("/dev/serial0",9600);
-luces = menu();
+#include "my_header.h"
 
-  
+fc= serialOpen("/dev/serial0",9600);
+
+int sync(){
+  char test=T;
+  serialPutchar(fd,test);
+  if(test==serialGetchar (fd)){
+  fflush (fd) ;
+  return 0
+  }else 
+  return 1;
 }
+  
+

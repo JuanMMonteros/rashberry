@@ -9,6 +9,10 @@ int menu_local();
 int adc_load();
 //limpia consola
 void clean_consol();
+//Syncronizacion de la comunicacion 
+int sync();
+//Menu Remoto
+int menu_remoto();
 
 //lectura teclas sin espera activa
 int condition_end();

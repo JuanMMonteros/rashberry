@@ -179,7 +179,7 @@ int control_leds_file(int number){
 
 int control_leds(int number){
 	 pinINIT();
-     timer = adc_load()/25;
+     time = adc_load();
 	switch(number){
 		case 1:jump(20);
 			break;
