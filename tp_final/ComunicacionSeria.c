@@ -4,7 +4,7 @@
 
 #include "my_header.h"
 
-fd= serialOpen("/dev/serial0",9600);
+int fd= serialOpen("/dev/serial0",9600);
 
 int sync(){
   char test='T';
