@@ -14,7 +14,7 @@ int sync(){
   fflush (fd) ;
   return 0;
   }else 
-  return
+  return 1;
 }
   
 
