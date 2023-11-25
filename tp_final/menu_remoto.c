@@ -7,7 +7,7 @@
 int menu_remoto() {
     printf("Prueba de comunicacion\n");
     if(sync()!=0){
-        printf("Error de comunicacion\n")
+        printf("Error de comunicacion\n");
         return 1;
     }
     printf("Comunicacion Exitosa\n");
