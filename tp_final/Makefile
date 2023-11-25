@@ -40,6 +40,10 @@ menu_local.o: menu_local.c
 
 fun_nointerrup.o: fun_nointerrup.c
 
+ComunicacionSerial.o: ComunicacionSerial.c 
+
+menu_remoto.o: menu_remoto.c
+
 #limpiar
 clean:
 	rm -f $(NAME) *.o *.gch
