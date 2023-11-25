@@ -15,9 +15,10 @@ int sync(){
   if(test==resive){
   
   serialFlush(fd);
-  printf("Anda God\n");
+  printf("Anda Gods\n");
   return 0;
   }else{
+     serialFlush(fd);
     printf("el Caracter Recivido fue %c ",resive);
   } 
 
