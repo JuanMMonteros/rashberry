@@ -87,7 +87,7 @@ void bucleLEDs (struct LedField *leds,int bucle){
 
 //estado correcto de pines GPIO
 void pinINIT(){
-        wiringPiSetup();
+    wiringPiSetup();
         pinMode(4,OUTPUT);
         pinMode(5,OUTPUT);
         pinMode(6,OUTPUT);
@@ -179,6 +179,7 @@ int control_leds_file(int number){
 
 int control_leds(int number){
 	 pinINIT();
+     timer = adc_load()/25;
 	switch(number){
 		case 1:jump(20);
 			break;
