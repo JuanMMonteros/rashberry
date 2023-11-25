@@ -11,7 +11,7 @@ int sync(){
   char test='T';
   char resive;
   serialPutchar(fd,test);
-  resive=serialPutchar(fd);
+  resive=serialGetchar(fd);
   if(test==resive){
   fflush (fd) ;
   printf("Error\n");
