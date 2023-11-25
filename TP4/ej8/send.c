@@ -6,10 +6,12 @@ wiringPiSetup();
 int serial_port;
 serial_port = serialOpen("/dev/serial0",9600);
 fflush(serial_port);
-int caracter[20] ="Hola Mundo";
+int * caracter ="Hola Mundo";
 
 for(int i=0;i<20;i++){
 serialPutchar(serial_port,caracter[i]);
+serialFlush(serial_port);
+delay(10);
 }
  return 0;
 }
