@@ -41,12 +41,14 @@ struct termios term_orig;
 					case 'm':
 					case 'M': //modo maestro
 						printf("Dispositivo en modo maestro \n");
+						maestro();
 						break;
 					case 's':
 					case 'S':
 					case 'e':
 					case 'E': //modo esclavo
 						printf("Dispositivo en modo esclavo \n");
+						esclavo();
 						break;
 					default: 
 						printf("Opcion no valida programa terminado \n");

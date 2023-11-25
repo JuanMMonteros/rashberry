@@ -13,6 +13,10 @@ void clean_consol();
 int sync();
 //Menu Remoto
 int menu_remoto();
+// send 
+void send(char);
+// recive
+char recive();
 
 //lectura teclas sin espera activa
 int condition_end();

@@ -4,10 +4,10 @@
 
 #include "my_header.h"
 
-
+int fd;
 
 int sync(){
-  int fd= serialOpen("/dev/serial0",9600);
+  fd= serialOpen("/dev/serial0",9600);
   char test='T';
   char resive;
   serialPutchar(fd,test);
@@ -24,5 +24,14 @@ int sync(){
 
   return 1;
 }
+ void send(char caracter){
+  serialPutchar(fd,caracter);
+  serialFlush(fd);
+ }
+
+ char recive(){
+  char caracter=serialGetchar(fd);
+  serialFlush(fd);
+ }
   
 
