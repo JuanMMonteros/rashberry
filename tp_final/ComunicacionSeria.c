@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <wiringPi.h>
-#include <wiringPiSerial.h>
+#include <wiringSerial.h>
 
 #include "my_header.h"
 
