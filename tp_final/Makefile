@@ -35,7 +35,7 @@ inttochar.o: inttochar.s
 password.o: password.c
 
 adc_load.o: adc_load.c
-    gcc -c adc_load.c -lwirinPi 
+
 
 menu_local.o: menu_local.c
 
