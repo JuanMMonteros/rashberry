@@ -35,6 +35,8 @@ int esclavo(){
 							clean_consol();
 						break;
 		}
+    }
+}
 
 
 int maestro(){
