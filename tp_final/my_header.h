@@ -5,6 +5,7 @@ int control_leds(int);
 int password();
 int menu_local();
 
+void remoteMode();
 //leer ADC
 int adc_load();
 //limpia consola
@@ -17,6 +18,10 @@ int menu_remoto();
 void send(char);
 // recive
 char recive();
+//esclavo
+int esclavo();
+//maestro
+int maestro();
 
 //lectura teclas sin espera activa
 int condition_end();

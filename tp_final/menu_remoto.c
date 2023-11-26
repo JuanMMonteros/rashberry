@@ -56,7 +56,8 @@ int maestro(){
 						break;
 					default: 
 						send(c);
-							clean_consol();
+                        printf(" delay=%cmS \n",resive()+48 );
+						clean_consol();
 						break;
 		}
     }
