@@ -36,7 +36,6 @@ int esclavo(){
 						break;
 		}
 
-}
 
 int maestro(){
      int w = 1;
