@@ -64,7 +64,3 @@ int maestro(){
     return 0;
 }
 
-void clean_consol(){
-	for (int i = 0; i < 50; ++i)
-		printf("\n");
-}
