@@ -85,7 +85,7 @@ void bucleLEDs (struct LedField *leds,int bucle){
          }
 }
 void remoteMode(void){
-    send(time(char)+48);
+    send((char)time+48);
 }
 
 //estado correcto de pines GPIO
