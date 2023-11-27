@@ -6,7 +6,7 @@ wiringPiSetup();
 int serial_port;
 serial_port = serialOpen("/dev/serial0",9600);
 serialFlush(serial_port);
-char caracter =getchar();
+unsigned char caracter =getchar();
 serialPutchar(serial_port,caracter);
  return 0;
 }
