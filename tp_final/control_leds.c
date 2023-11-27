@@ -182,7 +182,7 @@ int control_leds_file(int number){
 
 int control_leds(int number){
 	 pinINIT();
-     time = adc_load();
+     time = adc_load(); //carga time con el valor del adc para iniciar
 	switch(number){
 		case 1:jump(20);
 			break;
