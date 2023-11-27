@@ -9,6 +9,7 @@ char caracter;
   serialFlush(serial_port);
 while(1){
  caracter = getchar();
+ printf("se mandara: %c",caracter);
  delay(100);
  serialPutchar(serial_port,caracter);
 }
