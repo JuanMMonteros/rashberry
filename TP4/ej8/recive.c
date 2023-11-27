@@ -10,6 +10,6 @@ char caracter;
 caracter=serialGetchar(serial_port);
 printf("%c",caracter);
 serialFlush(serial_port);
-serialClose(fd);
+serialClose(serial_port);
  return 0;
 }
