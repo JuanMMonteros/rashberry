@@ -5,7 +5,13 @@ int control_leds(int);
 int password();
 int menu_local();
 
+//modo remoto
 void remoteMode();
+void refresh ();
+int condition_end_remote();
+int up_dw_remote();
+
+
 //leer ADC
 int adc_load();
 //limpia consola
