@@ -12,7 +12,7 @@ delay(10);
     caracter=serialGetchar(serial_port);
     if(caracter != -1){
       serialFlush(serial_port);
-      printf("%c\n",caracter);
+      printf("%d\n",caracter);
     }
   }
 serialClose(serial_port);
