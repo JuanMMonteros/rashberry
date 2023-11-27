@@ -8,6 +8,7 @@ void act_time();
 void text(int vel,char *name);
 
 int timeb=0; //variable global tiempo
+timeb = adc_load(); //carga timeb con el valor del adc para iniciar
 
 void jump(int vel){
 	int led[8]={4,5,6,26,27,28,29,25};
