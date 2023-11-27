@@ -9,7 +9,7 @@ unsigned char caracter ='A';
   serialFlush(serial_port);
 while(1){
  delay(100);
-serialPutchar(serial_port,caracter);}
+serialPuts(serial_port,caracter);}
 serialClose(serial_port);
  return 0;
 }
