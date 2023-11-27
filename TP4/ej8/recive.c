@@ -5,13 +5,13 @@
 wiringPiSetup();
 int serial_port;
 serial_port = serialOpen("/dev/serial0",9600);
-int caracter;
+char caracter;
   while(1){
    //delay(10);
     caracter=serialGetchar(serial_port);
-    if(caracter != -1){
+    if((int)caracter != -1){
       //serialFlush(serial_port);
-      printf("%d\n",caracter);
+      printf("%c\n",caracter);
     }
   }
 serialClose(serial_port);
