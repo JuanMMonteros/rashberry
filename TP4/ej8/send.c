@@ -5,7 +5,7 @@
 wiringPiSetup();
 int serial_port;
 serial_port = serialOpen("/dev/serial0",9600);
-char caracter ="A";
+char caracter ='A';
 serialPutchar(serial_port,caracter);
  return 0;
 }
