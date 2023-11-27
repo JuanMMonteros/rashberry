@@ -1,5 +1,5 @@
 #variables
-OBJECTS = main.c control_leds.c password.o inttochar.o menu_local.o fun_nointerrup.o juegosdeluces.o adc_load.o ComunicacionSerial.o menu_remoto.o
+OBJECTS = main.c control_leds.c password.o inttochar.o menu_local.o fun_nointerrup.o juegosdeluces.o adc_load.o ComunicacionSerial.o menu_remoto.o control_leds_remote.o 
 HEADERS = my_header.h
 NAME = ejecutable
 
@@ -44,6 +44,8 @@ fun_nointerrup.o: fun_nointerrup.c
 ComunicacionSerial.o: ComunicacionSerial.c
 
 menu_remoto.o: menu_remoto.c
+
+control_leds_remote.o: control_leds_remote.c
 
 #limpiar
 clean:
