@@ -44,4 +44,7 @@ char read_keyboard();
 void jump(int vel)
 void bounce(int vel)
 
+//juego de luces en remoto
+int control_leds_remote(char)
+
 #endif
