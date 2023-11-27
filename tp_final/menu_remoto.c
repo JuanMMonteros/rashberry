@@ -31,8 +31,7 @@ int esclavo(){
 					default: 
 						if ( control_leds( (int)c - 48 ) ) //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
 							printf("\nUps!! esa secuencia no es ejecutable, intenta nuevamente\n\n");
-						else
-                        Remotemode();
+						elses
 							clean_consol();
 						break;
 		}

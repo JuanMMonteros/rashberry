@@ -26,12 +26,10 @@ int sync(){
 }
  void send(char caracter){
   serialPutchar(fd,caracter);
-  serialFlush(fd);
  }
 
  char recive(){
   char caracter=serialGetchar(fd);
-  serialFlush(fd);
  }
   
 
