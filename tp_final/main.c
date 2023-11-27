@@ -23,12 +23,13 @@ struct termios term_orig;
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
 	
-	
+	if(sync()){
+		printf("La comunicacioncion Remota esta disponible");
+	}
 	while(!read_keyboard()){
-	char * remotePassword;
-	strcpy(remotePassword,reciveKey());
-	if(strcmp(remotePassword,"12345")==0){
-	esclavo();
+	char remote_mode=recive();
+		if(remote_mode=='P')
+			esclavo();
 	}
 	
 	clean_consol();  //limpia la consola
@@ -44,25 +45,10 @@ struct termios term_orig;
 			case 'r':
 			case 'R': //programa en remoto
 			    clean_consol();  //limpia la consola
+				send('G');
 				menu_remoto();
 				printf("Funcionamiento maestro (m) esclavo (e): ");
-				switch ( read_keyboard() ){ //case para modo remoto maestro o esclavo
-					case 'm':
-					case 'M': //modo maestro
-						printf("Dispositivo en modo maestro \n");
-						maestro();
-						break;
-					case 's':
-					case 'S':
-					case 'e':
-					case 'E': //modo esclavo
-						printf("Dispositivo en modo esclavo \n");
-						esclavo();
-						break;
-					default: 
-						printf("Opcion no valida programa terminado \n");
-						break;
-				}
+				
 				break;
 			default: 
 				printf("Opcion no valida programa terminado \n");
