@@ -11,7 +11,7 @@ delay(10);
   while(1){
     caracter=serialGetchar(serial_port);
    if(caracter != -1)
-    printf("%d\n",caracter);
+    printf("%c\n",caracter);
   }
 serialClose(serial_port);
  return 0;
