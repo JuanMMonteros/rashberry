@@ -8,7 +8,7 @@ serial_port = serialOpen("/dev/serial0",9600);
 unsigned char caracter;
   serialFlush(serial_port);
 while(1){
- caracter = getchr();
+ caracter = getchar();
  delay(100);
  serialPutchar(serial_port,caracter);
 }
