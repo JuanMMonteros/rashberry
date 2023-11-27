@@ -47,12 +47,12 @@ serialFlush(fd);
 }
 
 void refresh (){
-  Status = recive();
+  status = recive();
 }
 
 
 int condition_end_remote(){
-    switch( Status ){
+    switch( status ){
         case 'f': 
         case 'F': return 1; //condicion salir juego luces
         default: return 0;
@@ -61,7 +61,7 @@ int condition_end_remote(){
 
 //detecta flechas arriba o abajo para cambiar tiempo
 int up_dw_remote(){
-            switch( Status ){
+            switch( status ){
                 case 'A': return 10;//up
                 case 'B': return -10; //Dw
                 default: return 0;
