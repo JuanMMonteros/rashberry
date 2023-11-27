@@ -4,7 +4,7 @@
  int main(){
 wiringPiSetup();
 int serial_port;
-serial_port = serialOpen("~/dev/serial0",9600);
+serial_port = serialOpen("/dev/serial0",9600);
 char caracter ='A';
   while(1){
 serialPutchar(serial_port,caracter);
