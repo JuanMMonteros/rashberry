@@ -6,15 +6,9 @@ wiringPiSetup();
 int serial_port;
 
 serial_port = serialOpen("/dev/serial0",9600);
-char caracter[20];
-for(int i=0;i<20;i++){
-if(caracter[i]!='\0'){
-caracter[i]=serialGetchar(serial_port);
+char caracter;
+caracter=serialGetchar(serial_port);
 printf("%c",caracter[i]);}
-else {
-printf("\n");
-i=20;
-}
-}
+
  return 0;
 }

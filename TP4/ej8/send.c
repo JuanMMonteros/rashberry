@@ -5,11 +5,7 @@
 wiringPiSetup();
 int serial_port;
 serial_port = serialOpen("/dev/serial0",9600);
-char * caracter ="Hola Mundo";
-char okey;
-for(int i=0;i<20;i++){
-serialPutchar(serial_port,caracter[i]);
-delay(10);
-}
+char caracter ="A";
+serialPutchar(serial_port,caracter);
  return 0;
 }
