@@ -11,7 +11,7 @@ int caracter;
     caracter=serialGetchar(serial_port);
     if(caracter != -1){
       //serialFlush(serial_port);
-      printf("%d\n",caracter);
+      printf("%c\n",(char)caracter);
     }
   }
 serialClose(serial_port);
