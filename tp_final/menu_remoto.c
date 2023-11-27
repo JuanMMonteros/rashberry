@@ -5,21 +5,18 @@
 
 
 int menu_remoto() {
-    printf("Prueba de comunicacion\n");
-    if(sync()!=0){
-        printf("Error de comunicacion\n");
-        return 1;
-    }
-    printf("Comunicacion Exitosa\n");
-    return 0;
+	printf("Bienvenido al mode Remoto");
+	maestro();
+	return 0;
 }
-
+    
 int esclavo(){
      int w = 1;
-    char c;
+    char c=-1;
     while(w==1){
 	printf("Menu Exclavo\n");
-    	c = recive();
+	while(c ==-1){
+    	c = recive();}
     	switch (c){ //case para juego de luces o salir
 					case 's':
 					case 'S':
@@ -29,7 +26,7 @@ int esclavo(){
 						w=0;
 						break;
 					default: 
-						if ( control_leds( (int)c - 48 ) ) //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
+						if ( control_leds_remote(c)) //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
 							printf("\nUps!! esa secuencia no es ejecutable, intenta nuevamente\n\n");
 						else
 							clean_consol();
@@ -55,9 +52,13 @@ int maestro(){
 						w=0;
 						break;
 					default: 
+						while(c =!'s'){
 						send(c);
-                        printf(" delay=%cmS \n",recive()+48 );
+                                                printf(" delay=%cmS \n",recive()+48 );
+						c = read_keyboard();
 						clean_consol();
+						}
+						w=0;
 						break;
 		}
     }
