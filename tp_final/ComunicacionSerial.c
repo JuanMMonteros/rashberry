@@ -5,6 +5,7 @@
 #include "my_header.h"
 
 int fd;
+char status;
 
 int sync(){
   fd= serialOpen("/dev/serial0",9600);
@@ -45,3 +46,25 @@ password[i]=recive();}
 serialFlush(fd);
 }
 
+void refresh (){
+  Status = recive();
+}
+
+
+int condition_end_remote(){
+    switch( Status ){
+        case 'f': 
+        case 'F': return 1; //condicion salir juego luces
+        default: return 0;
+    }
+}
+
+//detecta flechas arriba o abajo para cambiar tiempo
+int up_dw_remote(){
+            switch( Status ){
+                case 'A': return 10;//up
+                case 'B': return -10; //Dw
+                default: return 0;
+            }
+    return 0;
+}
