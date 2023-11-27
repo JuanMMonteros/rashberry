@@ -7,11 +7,11 @@ int serial_port;
 serial_port = serialOpen("/dev/serial0",9600);
 int caracter;
   while(1){
-   delay(10);
+   //delay(10);
     caracter=serialGetchar(serial_port);
     if(caracter != -1){
       //serialFlush(serial_port);
-      printf("%c\n",(char)caracter);
+      printf("%d\n",caracter);
     }
   }
 serialClose(serial_port);
