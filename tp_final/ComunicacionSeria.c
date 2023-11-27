@@ -18,7 +18,7 @@ int sync(){
   return 0;
   }else{
      serialFlush(fd);
-    printf("el Caracter Recivido fue %c ",resive);
+    printf("el Caracter Recivido fue %c ",recive);
   } 
 
   return 1;
