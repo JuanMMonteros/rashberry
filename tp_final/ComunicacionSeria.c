@@ -9,7 +9,7 @@ int fd;
 int sync(){
   fd= serialOpen("/dev/serial0",9600);
   char test='T';
-  char resive;
+  char recive;
   serialPutchar(fd,test);
   recive=serialGetchar(fd);
   if(test==recive){
@@ -41,7 +41,7 @@ delay(10);}
 char * reciveKey(){
 char password[5];
 for(int i=0;i<5;i++){
-password[i]=resive();}
+password[i]=recive();}
 serialFlush(fd);
 }
 
