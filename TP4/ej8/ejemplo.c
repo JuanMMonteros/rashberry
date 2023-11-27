@@ -17,6 +17,7 @@ int main() {
             serial_data = serialGetchar(serial_port);
             printf("Carácter recibido: %c\n", serial_data);
         }
+        serialFlush(serial_port);
     }
 
     return 0;
