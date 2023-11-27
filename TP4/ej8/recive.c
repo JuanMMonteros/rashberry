@@ -10,8 +10,10 @@ serialFlush(serial_port);
 delay(10);
   while(1){
     caracter=serialGetchar(serial_port);
-   if(caracter != -1)
-    printf("%c\n",caracter);
+    if(caracter != -1){
+      serialFlush(serial_port);
+      printf("%c\n",caracter);
+    }
   }
 serialClose(serial_port);
  return 0;
