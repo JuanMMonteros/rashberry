@@ -45,7 +45,8 @@ ComunicacionSerial.o: ComunicacionSerial.c
 
 menu_remoto.o: menu_remoto.c
 
-control_leds_remote.o: control_leds_remote.c
+control_leds_remote.o: 
+	gcc -c control_leds_remote.c -lwirinPi 
 
 #limpiar
 clean:
