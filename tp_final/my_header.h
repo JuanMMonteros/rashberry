@@ -22,6 +22,10 @@ char recive();
 int esclavo();
 //maestro
 int maestro();
+// 
+void sendKey();
+//
+char * reciveKey();
 
 //lectura teclas sin espera activa
 int condition_end();

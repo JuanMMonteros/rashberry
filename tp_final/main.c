@@ -23,7 +23,16 @@ struct termios term_orig;
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
 	
+	
+	while(!read_keyboard()){
+	char * remotePassword;
+	strcpy(remotePassword,reciveKey());
+	if(strcmp(remotePassword,"12345")==0){
+	esclavo();
+	}
+	
 	clean_consol();  //limpia la consola
+	}
 	if( password() ){ //contraseña nesesaria para ejecutar programa
 		printf("Funcionamiento local (l) o remoto (r): ");
 		switch ( read_keyboard() ){ //case para modo en remoto o local

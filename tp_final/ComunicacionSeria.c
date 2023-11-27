@@ -11,9 +11,8 @@ int sync(){
   char test='T';
   char resive;
   serialPutchar(fd,test);
-  resive=serialGetchar(fd);
-  if(test==resive){
-  
+  recive=serialGetchar(fd);
+  if(test==recive){
   serialFlush(fd);
   printf("Anda Gods\n");
   return 0;
@@ -31,5 +30,18 @@ int sync(){
  char recive(){
   char caracter=serialGetchar(fd);
  }
-  
+ 
+ void sendKey(){
+char *password="12345";
+serialFlush(fd);
+for (int i=0;i<5;i++){
+send(password[i]);
+delay(10);}
+ }
+char * reciveKey(){
+char password[5];
+for(int i=0;i<5;i++){
+password[i]=resive();}
+serialFlush(fd);
+}
 
