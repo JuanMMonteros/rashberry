@@ -11,13 +11,18 @@ void serialInit(){
   fd= serialOpen("/dev/serial0",9600);
   serialFlush(fd);
 }
+
  void send(char caracter){
   serialPutchar(fd,caracter);
  }
 
  char recive(){
   char caracter=serialGetchar(fd);
-   printf("recive %c",caracter);
+   if((int)caracter != -1){
+      //serialFlush(serial_port);
+      printf("%c\n",caracter);
+    }else
+       printf("caca\n");
   return caracter;
  }
  
