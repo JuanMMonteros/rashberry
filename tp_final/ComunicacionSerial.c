@@ -7,22 +7,9 @@
 int fd;
 char status;
 
-int sync(){
+void serialInit(){
   fd= serialOpen("/dev/serial0",9600);
-  char test='T';
-  char recive;
-  serialPutchar(fd,test);
-  recive=serialGetchar(fd);
-  if(test==recive){
   serialFlush(fd);
-  printf("Anda Gods\n");
-  return 0;
-  }else{
-     serialFlush(fd);
-    printf("el Caracter Recivido fue %c ",recive);
-  } 
-
-  return 1;
 }
  void send(char caracter){
   serialPutchar(fd,caracter);
@@ -32,19 +19,7 @@ int sync(){
   char caracter=serialGetchar(fd);
  }
  
- void sendKey(){
-char *password="12345";
-serialFlush(fd);
-for (int i=0;i<5;i++){
-send(password[i]);
-delay(10);}
- }
-char * reciveKey(){
-char password[5];
-for(int i=0;i<5;i++){
-password[i]=recive();}
-serialFlush(fd);
-}
+
 
 void refresh (){
   status = recive();
