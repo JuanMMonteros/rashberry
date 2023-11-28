@@ -16,10 +16,9 @@ void serialInit(){
  }
 
  char recive(){
-  char caracter=-1;
-   if(serialDataAvail(fd)!=0)
-     caracter=serialGetchar(fd);
-   return caracter;
+  char caracter;
+  caracter=serialGetchar(fd);
+  return caracter;
  }
  
 
