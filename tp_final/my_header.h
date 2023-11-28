@@ -43,5 +43,7 @@ void bounce(int vel)
 
 //juego de luces en remoto
 int control_leds_remote(char)
+void jump_remote(int vel)
+void bounce_remote(int vel)
 
 #endif
