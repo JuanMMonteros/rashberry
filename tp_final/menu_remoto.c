@@ -52,10 +52,12 @@ int maestro(){
 						w=0;
 						break;
 					default: 
-						while(c =!'s'){
-						send(c);
-                                                printf(" delay=%cmS \n",recive()+48 );
-						c = read_keyboard();
+						if(c>47&&c<57){
+						send(c);}
+						else{
+							printf("opcion no valida");
+						}
+						
 						clean_consol();
 						}
 						w=0;
