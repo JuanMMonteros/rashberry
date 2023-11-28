@@ -44,6 +44,7 @@ int condition_end(){
         case 'p': 
         case 'P': printf("\nprecione cualquier tecla para continuar \n"); //condicion pausa
                   getchar();//espera a tecla precionada si o si
+                  printf("Programa continuado \n");
         default: return 0;
     }
 }
