@@ -136,9 +136,9 @@ int control_leds_remote(char number){
 	 pinINIT();
      timer = adc_load(); //carga time con el valor del adc para iniciar
 	switch(number){
-		case '1'://jump(20);
+		case '1':jump_remote(20);
 			break;
-		case '2'://bounce(20);
+		case '2':bounce_remote(20);
 			break;
 		default: return control_leds_file_remote(number);
 	}
