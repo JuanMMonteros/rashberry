@@ -17,6 +17,7 @@ void serialInit(){
 
  char recive(){
   char caracter=serialGetchar(fd);
+   printf("recive %c",caracter);
   return caracter;
  }
  
