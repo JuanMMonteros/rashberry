@@ -26,6 +26,7 @@ struct termios term_orig;
 	printf("Prseione una tecla para iniciar el Programa\n");
 	while(!read_keyboard()){
 	char remote_mode=recive();
+		printf("%c\n"remote_mode);
 		if(remote_mode=='P'){
 			printf("Entrando en modo Remoto");
 			esclavo();
