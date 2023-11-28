@@ -16,8 +16,7 @@ void serialInit(){
  }
 
  char recive(){
-  char caracter;
-  caracter=serialGetchar(fd);
+  char caracter=serialGetchar(fd);
   return caracter;
  }
  
