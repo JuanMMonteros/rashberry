@@ -8,17 +8,6 @@
 int timer=0; //variable global tiempo
 
 // Estructura para representar el campo de bits de 8 LEDs
-struct LedField {
-    unsigned char led1 : 1;
-    unsigned char led2 : 1;
-    unsigned char led3 : 1;
-    unsigned char led4 : 1;
-    unsigned char led5 : 1;
-    unsigned char led6 : 1;
-    unsigned char led7 : 1;
-    unsigned char led8 : 1;
-    unsigned int delay;
-};
 
 void GPIOEstadoLEDs_remote(struct LedField leds) {
 	digitalWrite(4,leds.led1);
