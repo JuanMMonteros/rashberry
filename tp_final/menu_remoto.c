@@ -66,7 +66,6 @@ int maestro(){
 						}
 						
 						clean_consol();
-						}
 						w=0;
 						break;
 		}
