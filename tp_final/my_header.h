@@ -36,6 +36,8 @@ int up_dw();
 
 //lee caracter y lo escribe en pantalla
 char read_keyboard();
+//lee caracter sin bloquear
+char key_ni();
 
 //juegos luces por algoritmo
 void jump(int vel)
