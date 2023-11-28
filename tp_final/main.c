@@ -22,17 +22,22 @@ struct termios term_orig;
 
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
-	serialInit();
+	
+	serialInit();//inicia el seial
 	printf("Modo espera \nPrseione una tecla para iniciar el Programa o inicie modo remoto desde otro dispositivo\n");
 	char remote_mode;
-	while(key_ni()==0){
+	while(key_ni()==0){ //modo espera que se conecta solo en remoto
 	        remote_mode=recive();
-		printf("%c\n",remote_mode);
 		if(remote_mode=='P'){
 			printf("Entrando en modo Remoto");
 			esclavo();
+			//antes de salir retorna modo de consola
+   			 tcsetattr(STDIN_FILENO, TCSANOW, &term_orig); // Restaura el modo de entrada original
+			 printf("\n");
+   			 return 0;
 		}
 	}
+	
 	
 	clean_consol();  //limpia la consola
 	if( password() ){ //contraseña nesesaria para ejecutar programa
