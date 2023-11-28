@@ -53,7 +53,19 @@ int maestro(){
 						break;
 					default: 
 						if(c>47&&c<57){
-						send(c);}
+						send(c);
+						
+							menu_control_remoto();
+							do{
+								char comprobar=recive();
+								if(comprobar == 1){
+									printf("la secuencia de luces no existe");
+								}
+								if(comprobar == 0){
+									printf("La secuencia se ejecuto corectamente")
+								}while();
+							}
+						}
 						else{
 							printf("opcion no valida");
 						}
@@ -68,3 +80,17 @@ int maestro(){
     return 0;
 }
 
+int menu_control_remoto(){
+	int flag=1;
+	char c;
+        while(flag){
+		if(!condicion_end()){
+			send('F');
+			flag=0;
+		}
+		if(!up_dw()){
+			c = (c>0)?'A':'B';
+			send(c)
+		}
+	}
+}
