@@ -24,8 +24,9 @@ struct termios term_orig;
 	//programas aqui abajo
 	serialInit();
 	printf("Prseione una tecla para iniciar el Programa\n");
+	char remote_mode;
 	while(!read_keyboard()){
-	char remote_mode=recive();
+	        remote_mode=recive();
 		printf("%c\n"remote_mode);
 		if(remote_mode=='P'){
 			printf("Entrando en modo Remoto");
