@@ -59,17 +59,7 @@ int maestro(){
 					default: 
 						if(c>47&&c<57){
 						send(c);
-						
 							menu_control_remoto();
-							do{
-								char comprobar=recive();
-								if(comprobar == 1){
-									printf("la secuencia de luces no existe");
-								}
-								if(comprobar == 0){
-									printf("La secuencia se ejecuto corectamente")
-								}while();
-							}
 						}
 						else{
 							printf("opcion no valida");
