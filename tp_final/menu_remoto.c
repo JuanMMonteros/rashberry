@@ -11,12 +11,15 @@ int menu_remoto() {
 }
     
 int esclavo(){
-     int w = 1;
+    int w = 1;
     char c=-1;
+
     while(w==1){
-	printf("Menu Exclavo\n");
-	while(c ==-1 || c>200){
+	printf("Modo Esclavo - El control esta dado de manera remota\n");
+
+	while(c ==-1 || c>200){ //LEE SERIAL SI CORRESPONDE
     	c = recive();}
+
     	switch (c){ //case para juego de luces o salir
 					case 's':
 					case 'S':
@@ -26,14 +29,16 @@ int esclavo(){
 						w=0;
 						break;
 					default: 
-						if ( control_leds_remote(c)) //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
+						if ( control_leds_remote(c)){ //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
 							printf("\nUps!! esa secuencia no es ejecutable, intenta nuevamente\n\n");
-						else
-							clean_consol();
-						break;
+                            send('1');}
+						else{
+                            send('0');
+                            clean_consol();}
 		}
     }
 }
+
 
 
 int maestro(){
