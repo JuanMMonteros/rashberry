@@ -81,7 +81,7 @@ int menu_control_remoto(){
 	char c;
 
 	clean_consol();
-	printf("(f) salir | (p) bloqueo | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");}
+	printf("(f) salir | (p) bloqueo | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
         while(flag){
 		
 			
