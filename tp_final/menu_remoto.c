@@ -99,10 +99,10 @@ int menu_control_remoto(){
 
 
         switch (recive()){ //case para juego de luces o salir
-					case 1: printf("La secuencia de luces no existe");
+		    case '1': printf("La secuencia de luces no existe");
                             flag=0;
                             break;
-                    case 0: printf("La secuencia de luces finalizo correctamente\n");
+                    case '0': printf("La secuencia de luces finalizo correctamente\n");
                             flag=0;
                             break;
         }
