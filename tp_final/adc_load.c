@@ -10,9 +10,14 @@
 
 #include "my_header.h"
 
+int adc_init = 1;
+
 int adc_load(void) {
     int val;
-    pcf8591Setup(BASE, Address);
+    if (adc_init !=0){
+        pcf8591Setup(BASE, Address);
+        adc_init = 0;
+    }
         val = analogRead(A3);
         return val;
 }
