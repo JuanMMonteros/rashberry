@@ -17,8 +17,12 @@ int up_dw_remote();
 
 //leer ADC
 int adc_load();
+
 //limpia consola
 void clean_consol();
+//lista juegos
+void list();
+
 //Syncronizacion de la comunicacion 
 void serialInit();
 //Menu Remoto
