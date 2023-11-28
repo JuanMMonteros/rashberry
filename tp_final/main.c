@@ -42,7 +42,7 @@ struct termios term_orig;
 			case 'r':
 			case 'R': //programa en remoto
 			    clean_consol();  //limpia la consola
-				send('G');
+				send('P');
 				menu_remoto();
 				printf("Funcionamiento maestro (m) esclavo (e): ");
 				
