@@ -16,10 +16,11 @@ int esclavo(){
 
     while(w==1){
 	printf("Modo Esclavo - El control esta dado de manera remota\n");
+	    
 
-	while(c ==-1 || c>200){ //LEE SERIAL SI CORRESPONDE
+	while(c ==-1){ //LEE SERIAL SI CORRESPONDE
     	c = recive();}
-
+	printf("recivido: %c",c);
     	switch (c){ //case para juego de luces o salir
 					case 's':
 					case 'S':
