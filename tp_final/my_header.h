@@ -2,6 +2,9 @@
 #define my_header
 
 int control_leds(int);
+void GPIOEstadoLEDs(struct LedField leds);
+void LEDsOFF();
+void pinINIT();
 int password();
 int menu_local();
 
