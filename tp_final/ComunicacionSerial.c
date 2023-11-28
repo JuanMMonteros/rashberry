@@ -17,12 +17,14 @@ void serialInit(){
  }
 
  char recive(){
-  char caracter=serialGetchar(fd);
-   if((int)caracter != -1){
-      //serialFlush(serial_port);
-      printf("%c\n",caracter);
-    }else
-       printf("caca\n");
+  char caracter=-1;
+   if(serialDataAvail(fd)>0){
+     caracter=serialGetchar();
+     if(caracter>32&&caracter<128)
+       return caracter;
+     else 
+       caracter = -1;
+   }
   return caracter;
  }
  
