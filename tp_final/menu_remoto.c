@@ -15,7 +15,7 @@ int esclavo(){
     char c=-1;
     while(w==1){
 	printf("Menu Exclavo\n");
-	while(c ==-1){
+	while(c ==-1 || c>200){
     	c = recive();}
     	switch (c){ //case para juego de luces o salir
 					case 's':
