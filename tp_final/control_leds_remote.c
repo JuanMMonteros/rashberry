@@ -133,7 +133,7 @@ int control_leds_file_remote(char number){
 
 int control_leds_remote(char number){
 	 pinINIT();
-     time = adc_load(); //carga time con el valor del adc para iniciar
+     timer = adc_load(); //carga time con el valor del adc para iniciar
 	switch(number){
 		case '1'://jump(20);
 			break;
