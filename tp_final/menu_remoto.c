@@ -30,6 +30,7 @@ int esclavo(){
 					case 'E': //salir menu 
 						printf("Saliendo del menu principal \n");
 						w=0;
+						send('E');
 						break;
 					default: 
 						if ( control_leds_remote(c)){ //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
