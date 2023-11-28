@@ -7,7 +7,7 @@
 
 extern char inttochar (int); //funcion de ensamblador que combierte numeros del 0 al 9 en chars 
 
-int time=0; //variable global tiempo
+int timer=0; //variable global tiempo
 
 // Estructura para representar el campo de bits de 8 LEDs
 struct LedField {
@@ -22,60 +22,17 @@ struct LedField {
     unsigned int delay;
 };
 
-// Función para imprimir el estado de los LEDs por consola
-void imprimirEstadoLEDs(struct LedField leds) {
-    leds.led1 ? printf("[O]") : printf("[x]") ;
-    leds.led2 ? printf("[O]") : printf("[x]") ;
-    leds.led3 ? printf("[O]") : printf("[x]") ;
-    leds.led4 ? printf("[O]") : printf("[x]") ;
-    leds.led5 ? printf("[O]") : printf("[x]") ;
-    leds.led6 ? printf("[O]") : printf("[x]") ;
-    leds.led7 ? printf("[O]") : printf("[x]") ;
-    leds.led8 ? printf("[O]") : printf("[x]") ;
-    printf(" delay=%dmS \n",(leds.delay + time) );
-}
-
-// Función para imprimir el estado de los LEDs por GPIO
-void GPIOEstadoLEDs(struct LedField leds) {
-	digitalWrite(4,leds.led1);
-	digitalWrite(5,leds.led2);
-	digitalWrite(6,leds.led3);
-	digitalWrite(26,leds.led4);
-	digitalWrite(27,leds.led5);
-	digitalWrite(28,leds.led6);
-	digitalWrite(29,leds.led7);
-	digitalWrite(25,leds.led8);
-	delay(leds.delay + time );
-}
-
-// Función para apagar todos los LEDs por GPIO
-void LEDsOFF() {
-	digitalWrite(4,0);
-	digitalWrite(5,0);
-	digitalWrite(6,0);
-	digitalWrite(26,0);
-	digitalWrite(27,0);
-	digitalWrite(28,0);
-	digitalWrite(29,0);
-	digitalWrite(25,0);
-}
-
-
 
 //funcion que produce bucle de juego de luces 
-void bucleLEDs (struct LedField *leds,int bucle){
+void bucleLEDs_remote  (struct LedField *leds,int bucle){
 	int w=1;
         while(w){
 		for (int i = 0; i < bucle; ++i){
 			//ajuste tiempo para los delays
-			time += up_dw_remote();
-			if(time<0)       //limita a numeros positivos
-				time=0;
-
-			printf("(f) finalizar |(p) pausa | flechas tiempo    ");
-                	// Llamar a la función para imprimir el estado de los LEDs por consola
-            		imprimirEstadoLEDs(leds[i]);
-                	// Llamar a la función para imprimir el estado de los LEDs por GPIO  
+			timer += up_dw_remote();
+			if(timer<0)       //limita a numeros positivos
+				timer=0;
+			
             		GPIOEstadoLEDs(leds[i]);
 	    		if( condition_end_remote() ){   //sale del bucle
 				w=0;
@@ -86,21 +43,8 @@ void bucleLEDs (struct LedField *leds,int bucle){
 }
 
 
-//estado correcto de pines GPIO
-void pinINIT(){
-    wiringPiSetup();
-        pinMode(4,OUTPUT);
-        pinMode(5,OUTPUT);
-        pinMode(6,OUTPUT);
-        pinMode(26,OUTPUT);
-        pinMode(27,OUTPUT);
-        pinMode(28,OUTPUT);
-        pinMode(29,OUTPUT);
-        pinMode(25,OUTPUT);
-}
 
-
-int control_leds_file(char number){
+int control_leds_file_remote(char number){
 
     char file_name [6]="1.txt";
     file_name[0]= number;
@@ -166,7 +110,7 @@ int control_leds_file(char number){
 
     // Realizar operaciones con los datos aquí
 
-    bucleLEDs (leds,numElementos);
+    bucleLEDs_remote (leds,numElementos);
 
     // Libera la memoria utilizada para el vector
     free(leds);
