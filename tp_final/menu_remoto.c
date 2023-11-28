@@ -57,8 +57,8 @@ int maestro(){
 						w=0;
 						break;
 					default: 
-						if(c>47&&c<57){
-						send(c);
+						if(c>47 && c<57){
+							send(c);
 							menu_control_remoto();
 						}
 						else{
@@ -66,25 +66,42 @@ int maestro(){
 						}
 						
 						clean_consol();
-						w=0;
-						break;
 		}
     }
 
     return 0;
 }
 
-void menu_control_remoto(){
+int menu_control_remoto(){
 	int flag=1;
 	char c;
         while(flag){
-		if(!condition_end()){
+        
+		if(!condicion_end()){ //salir juego de luces
 			send('F');
-			flag=0;
+			//flag=0;
 		}
-		if(!up_dw()){
-			c = (c>0)?'A':'B';
-			send(c);
-		}
+        
+        switch (up_dw()){ //case para juego de luces 
+					case 10: printf("Aumentando velocidad juego de luces\n");
+                             send('A');
+                            break;
+                    case -10: printf("Disminuye velocidad juego de luces\n");
+                              send('B');
+                            break;
+        }
+
+
+        switch (recive()){ //case para juego de luces o salir
+					case 1: printf("La secuencia de luces no existe");
+                            flag=0;
+                            break;
+                    case 0: printf("La secuencia de luces finalizo correctamente\n");
+                            flag=0;
+                            break;
+        }
+
+
+
 	}
 }
