@@ -18,7 +18,7 @@ int esclavo(){
 	printf("Modo Esclavo - El control esta dado de manera remota\n");
 	    
 
-	while(c ==-1){ //LEE SERIAL SI CORRESPONDE
+	while(c ==-1 || c > 130){ //LEE SERIAL SI CORRESPONDE
     	c = recive();}
 	printf("recivido: %c\n",c);
     	switch (c){ //case para juego de luces o salir
@@ -32,10 +32,10 @@ int esclavo(){
 					default: 
 						if ( control_leds_remote(c)){ //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
 							printf("\nUps!! esa secuencia no es ejecutable, intenta nuevamente\n\n");
-                            send('1');}
+                           				 send('1');}
 						else{
-                            send('0');
-                            clean_consol();}
+                            				send('0');
+                           				 clean_consol();}
 		}
     }
 }
