@@ -5,8 +5,6 @@
 
 #include "my_header.h"
 
-extern char inttochar (int); //funcion de ensamblador que combierte numeros del 0 al 9 en chars 
-
 int timer=0; //variable global tiempo
 
 // Estructura para representar el campo de bits de 8 LEDs
@@ -22,6 +20,17 @@ struct LedField {
     unsigned int delay;
 };
 
+void GPIOEstadoLEDs_remote(struct LedField leds) {
+	digitalWrite(4,leds.led1);
+	digitalWrite(5,leds.led2);
+	digitalWrite(6,leds.led3);
+	digitalWrite(26,leds.led4);
+	digitalWrite(27,leds.led5);
+	digitalWrite(28,leds.led6);
+	digitalWrite(29,leds.led7);
+	digitalWrite(25,leds.led8);
+	delay(leds.delay + timer );
+}
 
 //funcion que produce bucle de juego de luces 
 void bucleLEDs_remote  (struct LedField *leds,int bucle){
@@ -33,7 +42,7 @@ void bucleLEDs_remote  (struct LedField *leds,int bucle){
 			if(timer<0)       //limita a numeros positivos
 				timer=0;
 			
-            		GPIOEstadoLEDs(leds[i]);
+            		GPIOEstadoLEDs_remote(leds[i]);
 	    		if( condition_end_remote() ){   //sale del bucle
 				w=0;
 				break;
