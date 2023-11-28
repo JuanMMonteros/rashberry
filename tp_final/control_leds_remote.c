@@ -37,6 +37,7 @@ void bucleLEDs_remote  (struct LedField *leds,int bucle){
 	int w=1;
         while(w){
 		for (int i = 0; i < bucle; ++i){
+			refresh (); //lee remoto y actualiza 
 			//ajuste tiempo para los delays
 			timer += up_dw_remote();
 			if(timer<0)       //limita a numeros positivos
