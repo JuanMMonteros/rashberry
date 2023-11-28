@@ -22,7 +22,7 @@ struct termios term_orig;
 
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
-	serial_Init();
+	serialInit();
 	printf("Prseione una tecla para iniciar el Programa\n");
 	while(!read_keyboard()){
 	char remote_mode=recive();
