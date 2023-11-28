@@ -22,7 +22,6 @@ struct termios term_orig;
 
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
-	delay(1000);
 	sync();
 	while(!read_keyboard()){
 	char remote_mode=recive();
