@@ -78,11 +78,11 @@ int maestro(){
 
 int menu_control_remoto(){
 	int flag=1;
-        static int tem;  //genera un retardo no activo para evitar parpadeos en consola
+        int tem;  //genera un retardo no activo para evitar parpadeos en consola
 	char c;
         while(flag){
 		
-		if( tem>20 ){ //genera un retardo no activo para evitar parpadeos en consola
+		if( tem>80 ){ //genera un retardo no activo para evitar parpadeos en consola
 			tem = 0;
 			clean_consol();
 			printf("(f) salir | (p) bloqueo | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");}
