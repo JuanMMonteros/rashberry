@@ -5,7 +5,7 @@ NAME = ejecutable
 
 
 
-all: ejecutable run
+all: clean ejecutable run
 
 #corre programa
 run: ejecutable
