@@ -95,7 +95,7 @@ void menu_control_remoto(){
 		}
 		if(!up_dw()){
 			c = (c>0)?'A':'B';
-			send(c)
+			send(c);
 		}
 	}
 }
