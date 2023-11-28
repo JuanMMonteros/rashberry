@@ -78,7 +78,7 @@ void menu_control_remoto(){
 	int flag=1;
 	char c;
         while(flag){
-		if(!condicion_end()){
+		if(!condition_end()){
 			send('F');
 			flag=0;
 		}
