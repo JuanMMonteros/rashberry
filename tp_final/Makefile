@@ -1,5 +1,5 @@
 #variables
-OBJECTS = main.c control_leds.c password.o inttochar.o menu_local.o fun_nointerrup.o juegosdeluces.o adc_load.o ComunicacionSerial.o menu_remoto.o control_leds_remote.o 
+OBJECTS = main.c control_leds.c password.o inttochar.o menu_local.o fun_nointerrup.o juegosdeluces.o adc_load.o ComunicacionSerial.o menu_remoto.o control_leds_remote.o juegosdeluces_remote.o
 HEADERS = my_header.h
 NAME = ejecutable
 
@@ -48,6 +48,9 @@ menu_remoto.o: menu_remoto.c
 
 control_leds_remote.o: 
 	gcc -c control_leds_remote.c -lwirinPi 
+
+juegosdeluces_remote.o : juegosdeluces_remote.c
+	gcc -c juegosdeluces_remote.c -lwirinPi
 
 #limpiar
 clean:
