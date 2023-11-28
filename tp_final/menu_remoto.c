@@ -85,7 +85,7 @@ int maestro(){
     return 0;
 }
 
-int menu_control_remoto(){
+void menu_control_remoto(){
 	int flag=1;
 	char c;
         while(flag){
