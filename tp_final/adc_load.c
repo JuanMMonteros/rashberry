@@ -19,5 +19,6 @@ int adc_load(void) {
         adc_init = 0;
     }
         val = analogRead(A3);
+    printf("adc %d",val);
         return val;
 }
