@@ -22,7 +22,7 @@ struct termios term_orig;
 
     tcsetattr(STDIN_FILENO, TCSANOW, &term); // Configura el modo sin eco
 	//programas aqui abajo
-	sync();
+	printf("Prseione una tecla para iniciar el Program\n");
 	while(!read_keyboard()){
 	char remote_mode=recive();
 		if(remote_mode=='P')
@@ -43,8 +43,6 @@ struct termios term_orig;
 			    clean_consol();  //limpia la consola
 				send('P');
 				menu_remoto();
-				printf("Funcionamiento maestro (m) esclavo (e): ");
-				
 				break;
 			default: 
 				printf("Opcion no valida programa terminado \n");
