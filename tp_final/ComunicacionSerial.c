@@ -19,7 +19,7 @@ void serialInit(){
  char recive(){
   char caracter=-1;
    if(serialDataAvail(fd)>0){
-     caracter=serialGetchar();
+     caracter=serialGetchar(fd);
      if(caracter>32&&caracter<128)
        return caracter;
      else 
