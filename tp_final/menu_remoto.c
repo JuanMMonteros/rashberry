@@ -47,9 +47,10 @@ int esclavo(){
 int maestro(){
      int w = 1;
     int c;
+    clean_consol();
     while(w==1){
 	printf("Menu Maestro\n");
-    	printf("Ingrese numero de la secuencia de luces o exit (e) para salir:\n");
+    	printf("Ingrese numero de la secuencia de luces | (E) para salir | (L) lista juegos:\n");
     	c = read_keyboard();
     	switch (c){ //case para juego de luces o salir
 					case 's':
@@ -60,16 +61,18 @@ int maestro(){
 						w=0;
 						send('E');
 						break;
+		                        case 'l':
+					case 'L': list(); //lista
+						break;
 					default: 
 						if(c>47 && c<57){
 							send(c);
 							menu_control_remoto();
 						}
 						else{
-							printf("opcion no valida");
+							printf("opcion no valida\n");
 						}
 						
-						clean_consol();
 		}
     }
 
@@ -93,20 +96,23 @@ int menu_control_remoto(){
 		}
         
         switch (up_dw()){ //case para juego de luces 
-					case 10: printf("Aumentando velocidad juego de luces\n");
+		    case 10: printf("Aumentando delay juego de luces\n");
                              send('A');
                             break;
-                    case -10: printf("Disminuye velocidad juego de luces\n");
+                    case -10: printf("Disminuye delay juego de luces\n");
                               send('B');
                             break;
         }
 
 
         switch (recive()){ //case para juego de luces o salir
-		    case '1': printf("La secuencia de luces no existe");
+		   
+		    case '1': clean_consol();
+			    printf("La secuencia de luces no existe");
                             flag=0;
                             break;
-                    case '0': printf("La secuencia de luces finalizo correctamente\n");
+                    case '0': clean_consol();
+			    printf("La secuencia de luces finalizo correctamente\n");
                             flag=0;
                             break;
         }
