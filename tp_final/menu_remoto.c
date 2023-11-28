@@ -77,7 +77,7 @@ int menu_control_remoto(){
 	char c;
         while(flag){
         
-		if(!condicion_end()){ //salir juego de luces
+		if(!condition_end()){ //salir juego de luces
 			send('F');
 			//flag=0;
 		}
