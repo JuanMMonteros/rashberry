@@ -78,14 +78,13 @@ int maestro(){
 
 int menu_control_remoto(){
 	int flag=1;
-        int tem;  //genera un retardo no activo para evitar parpadeos en consola
 	char c;
+
+	clean_consol();
+	printf("(f) salir | (p) bloqueo | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");}
         while(flag){
 		
-		if( tem>80 ){ //genera un retardo no activo para evitar parpadeos en consola
-			tem = 0;
-			clean_consol();
-			printf("(f) salir | (p) bloqueo | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");}
+			
 		
         
 		if(condition_end()){ //salir juego de luces
@@ -113,6 +112,6 @@ int menu_control_remoto(){
         }
 
 
-	tem++;
+
 	}
 }
