@@ -43,7 +43,6 @@ int password() {
 
         if (strcmp(password, correctPassword) == 0) {
             printf("Bienvenido al Sistema.\n");
-            sendKey();
             break; // Contraseña correcta, salimos del bucle
         } else {
             attempts--;
