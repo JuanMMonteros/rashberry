@@ -78,6 +78,7 @@ int menu_control_remoto(){
 	char c;
         while(flag){
 		clean_consol();
+		printf("(f) salir | (p) pausa | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
 		
         
 		if(!condition_end()){ //salir juego de luces
