@@ -20,7 +20,7 @@ int esclavo(){
 
 	while(c ==-1){ //LEE SERIAL SI CORRESPONDE
     	c = recive();}
-	printf("recivido: %c",c);
+	printf("recivido: %c\n",c);
     	switch (c){ //case para juego de luces o salir
 					case 's':
 					case 'S':
@@ -77,6 +77,8 @@ int menu_control_remoto(){
 	int flag=1;
 	char c;
         while(flag){
+		clean_consol();
+		
         
 		if(!condition_end()){ //salir juego de luces
 			send('F');
