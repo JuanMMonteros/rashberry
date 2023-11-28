@@ -33,7 +33,6 @@ struct termios term_orig;
 	}
 	
 	clean_consol();  //limpia la consola
-	}
 	if( password() ){ //contraseña nesesaria para ejecutar programa
 		printf("Funcionamiento local (l) o remoto (r): ");
 		switch ( read_keyboard() ){ //case para modo en remoto o local
