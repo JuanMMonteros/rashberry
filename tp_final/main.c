@@ -25,7 +25,7 @@ struct termios term_orig;
 	serialInit();
 	printf("Modo espera \nPrseione una tecla para iniciar el Programa o inicie modo remoto desde otro dispositivo\n");
 	char remote_mode;
-	while(!read_keyboard()){
+	while(key_ni()==0){
 	        remote_mode=recive();
 		printf("%c\n",remote_mode);
 		if(remote_mode=='P'){
