@@ -83,7 +83,7 @@ int menu_control_remoto(){
 		printf("(f) salir | (p) pausa | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
 		
         
-		if(!condition_end()){ //salir juego de luces
+		if(condition_end()){ //salir juego de luces
 			send('F');
 			//flag=0;
 		}
