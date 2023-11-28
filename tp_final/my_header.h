@@ -20,7 +20,7 @@ int adc_load();
 //limpia consola
 void clean_consol();
 //Syncronizacion de la comunicacion 
-int sync();
+void serialInit();
 //Menu Remoto
 int menu_remoto();
 // send 
