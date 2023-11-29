@@ -142,7 +142,7 @@ int menu_control_remoto(){
                             break;
         }
 
-	
+	//salida de emergencia por perdida de sincronismo
 	if(recive()=='L'){
 		    count=0;
 	    }else{
