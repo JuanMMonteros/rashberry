@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <wiringPi.h>
 
 #include "my_header.h"
 
@@ -9,6 +10,7 @@ int menu_remoto() {
 	printf("(F) para salir\n");
 	char c=-1;
 	while(c!='P' && !condition_end() ){
+		delay(100);
 		send('P');
 		c=recive();
 	}
