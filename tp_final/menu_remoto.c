@@ -11,10 +11,9 @@ int menu_remoto() {
 		send('P');
 		c=recive();
 	}
-	if(c=='P')
-            maestro();
-	else
-		printf("No se puedo establecer la comucacion");
+	limpearBuffer();
+        maestro();
+	
 	return 0;
 }
     
