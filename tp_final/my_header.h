@@ -24,6 +24,8 @@ void clean_consol();
 void list();
 
 //Syncronizacion de la comunicacion 
+// 
+void limpearBuffer();
 void serialInit();
 //Menu Remoto
 int menu_remoto();
