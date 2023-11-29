@@ -83,13 +83,15 @@ int maestro(){
 					default: 
 						if(c>47 && c<57){
 							send(c);
-						       menu_control_remoto();
+						       //menu_control_remoto();
 						}
 						else{
 							printf("opcion no valida\n");
 						}
 						
 		}
+	    if(recive()=='L')
+		    menu_control_remoto();
     }
 
     return 0;
@@ -136,4 +138,5 @@ int menu_control_remoto(){
 
 
 	}
+	limpiarBuffer();
 }
