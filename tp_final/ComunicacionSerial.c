@@ -22,6 +22,7 @@ void serialInit(){
    if(n>0){
      do{
      caracter=serialGetchar(fd);
+    printf("%d\n",caracter);
       n--;
      }while(!(caracter>32&&caracter<128)&& n);
      if(caracter>32&&caracter<128)
