@@ -5,8 +5,17 @@
 
 
 int menu_remoto() {
-	printf("Bienvenido al mode Remoto");
-	maestro();
+	printf("Bienvenido al mode Remoto Esperando Sincronicacion");
+	char c=-1;
+	int count=0;
+	while(c==-1 || count>100000){
+		c=recive();
+		count++;
+	}
+	if(c=='P')
+            maestro();
+	else
+		printf("No se puedo establecer la comucacion");
 	return 0;
 }
     
