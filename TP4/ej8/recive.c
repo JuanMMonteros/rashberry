@@ -21,10 +21,11 @@ char recive(){
  int main(){
 wiringPiSetup();
 fd = serialOpen("/dev/serial0",9600);
+char c=-1;
   while(1){
+    c=recive();
    if(c==-1)
-      printf("%c\n",caracter);
-    }
-serialClose(serial_port);
+      printf("%c\n",c);
+  }
  return 0;
 }
