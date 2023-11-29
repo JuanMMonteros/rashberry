@@ -29,6 +29,7 @@ struct termios term_orig;
 	while(key_ni()==0){ //modo espera que se conecta solo en remoto
 	        remote_mode=recive();
 		if(remote_mode=='P'){
+			send('P');
 			clean_consol();  //limpia la consola
 			printf("Entrando en modo Remoto");
 			esclavo();
