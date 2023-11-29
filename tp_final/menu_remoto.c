@@ -7,7 +7,7 @@
 int menu_remoto() {
 	printf("Bienvenido al mode Remoto Esperando Sincronicacion");
 	char c=-1;
-	while(c==-1){
+	while(c!='P'){
 		send('P');
 		c=recive();
 	}
@@ -32,6 +32,8 @@ int esclavo(){
 	printf("recivido: %c\n",c);
 	    
     	switch (c){ //case para juego de luces o salir
+					case 'P': send('P');
+						   break;
 					case 's':
 					case 'S':
 					case 'e':
