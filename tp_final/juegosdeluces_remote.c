@@ -18,6 +18,7 @@ void jump_remote(int vel){
 			if(i!=4){
 				act_time_remote();
 				text_remote(vel,"jump");
+				send('L');
 				
 				digitalWrite(led[i],1);
 				delay((vel+timec)*M);
@@ -43,6 +44,7 @@ void bounce_remote(int vel){
 			for(int j=(8-i);j>0; j--){
 				act_time_remote();
 				text_remote(vel,"bounce");
+				send('L');
 				
 				digitalWrite((led[j]-1),1);
 				delay((vel+timec)*M);
@@ -53,6 +55,7 @@ void bounce_remote(int vel){
 			for(int k=0; k<(7-i);k++){
 				act_time_remote();
 				text_remote(vel,"bounce");
+				send('L');
 				
 				digitalWrite(led[k],1);
 				delay((vel+timec)*M);
