@@ -18,15 +18,10 @@ void serialInit(){
 
  char recive(){
   char caracter=-1;
-  int n=serialDataAvail(fd);
-   if(n>0){
-     do{
+   if(serialDataAvail(fd)){
      caracter=serialGetchar(fd);
-      n--;
-     }while(!(caracter>32&&caracter<128)&& n);
      if(caracter>32&&caracter<128){
-       return caracter;
-       serialFlush(fd);}
+       return caracter;}
      else 
        caracter = -1;
    }
