@@ -69,13 +69,13 @@ int maestro(){
 						if(c>47 && c<57){
 							send(c);
 							c=-1;
-							while(c ==-1 || c > 130){ 
+							while(c ==-1){ 
 								c = recive();}
 							if(c=='O'){
-								printf("La secuencia de luces incio Cortectamente");
+	
 								menu_control_remoto();
 							}else{
-							printf("Error a iniciar la sececua fallo de comunicacion");
+							printf("Error de comunicacion");
 							}
 							
 						}
