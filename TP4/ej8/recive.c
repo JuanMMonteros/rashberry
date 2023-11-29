@@ -1,19 +1,30 @@
 #include <stdio.h>
 #include <wiringSerial.h>
 #include <wiringPi.h>
+int fd;
+char recive(){
+  char caracter=-1;
+  int n=serialDataAvail(fd);
+   if(n>0){
+     do{
+     caracter=serialGetchar(fd);
+      n--;
+     }while(!(caracter>32&&caracter<128)&& n);
+     if(caracter>32&&caracter<128){
+       return caracter;
+       serialFlush(fd);}
+     else 
+       caracter = -1;
+   }
+  return caracter;
+ }
  int main(){
 wiringPiSetup();
-int serial_port;
-serial_port = serialOpen("/dev/serial0",9600);
-char caracter;
+fd = serialOpen("/dev/serial0",9600);
   while(1){
-   //delay(10);
-    caracter=serialGetchar(serial_port);
-    if((int)caracter != -1){
-      //serialFlush(serial_port);
+   if(c==-1)
       printf("%c\n",caracter);
     }
-  }
 serialClose(serial_port);
  return 0;
 }
