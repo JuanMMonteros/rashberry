@@ -29,7 +29,6 @@ int esclavo(){
 
     while(w==1){
 	printf("Modo Esclavo - El control esta dado de manera remota\n");
-	    
 	//LEE SERIAL SI CORRESPONDE  
 	c=-1;
 	while(c ==-1 || c > 130){ 
@@ -106,11 +105,12 @@ int maestro(){
 
 int menu_control_remoto(){
 	int flag=1;
+	int count=0;
 	char c;
 
 	clean_consol();
 	printf("(f) salir | (p) bloqueo | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
-        while(flag){
+        while(flag || count<100000){
 		
 			
 		
@@ -142,6 +142,12 @@ int menu_control_remoto(){
                             break;
         }
 
+	
+	if(recive()=='L'){
+		    count=0;
+	    }else{
+		count++;
+	    }
 
 
 	}
