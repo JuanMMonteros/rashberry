@@ -55,6 +55,7 @@ void bucleLEDs_remote  (struct LedField *leds,int bucle){
 				timer=0;
 			imprimirEstadoLEDs_remote(leds[i]);
             		GPIOEstadoLEDs_remote(leds[i]);
+			send('L');//Sincronismo
 	    		if( condition_end_remote() ){   //sale del bucle
 				w=0;
 				break;
