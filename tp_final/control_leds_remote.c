@@ -19,6 +19,17 @@ struct LedField {
     unsigned char led8 : 1;
     unsigned int delay;
 };
+void imprimirEstadoLEDs_remote(struct LedField leds) {
+    leds.led1 ? printf("[O]") : printf("[x]") ;
+    leds.led2 ? printf("[O]") : printf("[x]") ;
+    leds.led3 ? printf("[O]") : printf("[x]") ;
+    leds.led4 ? printf("[O]") : printf("[x]") ;
+    leds.led5 ? printf("[O]") : printf("[x]") ;
+    leds.led6 ? printf("[O]") : printf("[x]") ;
+    leds.led7 ? printf("[O]") : printf("[x]") ;
+    leds.led8 ? printf("[O]") : printf("[x]") ;
+    printf(" delay=%dmS \n",(leds.delay + timer) );
+}
 
 void GPIOEstadoLEDs_remote(struct LedField leds) {
 	digitalWrite(4,leds.led1);
