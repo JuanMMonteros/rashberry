@@ -53,7 +53,7 @@ void bucleLEDs_remote  (struct LedField *leds,int bucle){
 			timer += up_dw_remote();
 			if(timer<0)       //limita a numeros positivos
 				timer=0;
-			imprimirEstadoLEDs_remote(leds[i]));
+			imprimirEstadoLEDs_remote(leds[i]);
             		GPIOEstadoLEDs_remote(leds[i]);
 	    		if( condition_end_remote() ){   //sale del bucle
 				w=0;
