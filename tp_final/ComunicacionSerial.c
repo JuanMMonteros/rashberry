@@ -28,6 +28,9 @@ void serialInit(){
   return caracter;
  }
  
+void limpiarBuffer(){
+  serialFlush(fd);
+}
 
 
 void refresh (){
