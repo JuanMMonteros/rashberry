@@ -31,10 +31,8 @@ int esclavo(){
 						printf("Saliendo del menu principal \n");
 						w=0;
 						break;
-					default: 
-						if(c>47&&c<57){
+					default:
 							send('O');
-						}
 						if ( control_leds_remote(c)){ //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
 							printf("\nUps!! esa secuencia no es ejecutable, intenta nuevamente\n\n");
                            				 send('1');}
