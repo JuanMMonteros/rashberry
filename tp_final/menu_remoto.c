@@ -11,7 +11,7 @@ int menu_remoto() {
 		send('P');
 		c=recive();
 	}
-	limpearBuffer();
+	limpiarBuffer();
         maestro();
 	
 	return 0;
