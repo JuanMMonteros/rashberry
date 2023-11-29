@@ -32,6 +32,9 @@ int esclavo(){
 						w=0;
 						break;
 					default: 
+						if(c>47&&c<57){
+							send('O');
+						}
 						if ( control_leds_remote(c)){ //llama a control leds si algo falla este debuelve 1 si todo esta ok 0 
 							printf("\nUps!! esa secuencia no es ejecutable, intenta nuevamente\n\n");
                            				 send('1');}
@@ -67,6 +70,16 @@ int maestro(){
 					default: 
 						if(c>47 && c<57){
 							send(c);
+							c=-1;
+							while(c ==-1 || c > 130){ 
+								c = recive();}
+							if(c=='O){
+								printf("La secuencia de luces incio Cortectamente");
+							}else{
+							printf("Error a iniciar la sececua fallo de comunicacion");
+							break;
+							}
+							
 							menu_control_remoto();
 						}
 						else{
