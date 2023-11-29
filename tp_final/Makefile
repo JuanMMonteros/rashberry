@@ -45,6 +45,7 @@ ComunicacionSerial.o: ComunicacionSerial.c
 	gcc -c ComunicacionSerial.c -lwirinPi 
 
 menu_remoto.o: menu_remoto.c
+	gcc -c menu_remoto.c -lwirinPi 
 
 control_leds_remote.o: 
 	gcc -c control_leds_remote.c -lwirinPi 
