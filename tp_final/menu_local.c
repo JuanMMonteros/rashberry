@@ -39,3 +39,13 @@ void clean_consol(){
 	for (int i = 0; i < 50; ++i)
 		printf("\n");
 }
+void list(){
+	printf("1. Secuencia Jump\n");
+	printf("2. Secuencia Bounce\n");
+	printf("3. Secuencia Auto Fantastico\n");
+	printf("4. Secuencia Jump\n");
+	printf("5. Secuencia Jump\n");
+	printf("6. Secuencia Jump\n");
+	printf("7. Secuencia Jump\n");
+	printf("8. Secuencia Jump\n");
+}
