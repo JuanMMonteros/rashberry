@@ -7,8 +7,8 @@
 int menu_remoto() {
 	printf("Bienvenido al mode Remoto Esperando Sincronicacion");
 	char c=-1;
+	send('P');
 	while(c==-1){
-		send('P');
 		c=recive();
 	}
 	if(c=='P')
