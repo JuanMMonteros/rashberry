@@ -7,10 +7,9 @@
 int menu_remoto() {
 	printf("Bienvenido al mode Remoto Esperando Sincronicacion");
 	char c=-1;
-	int count=0;
-	while(c==-1 || count>100000){
+	while(c==-1){
+		send('P');
 		c=recive();
-		count++;
 	}
 	if(c=='P')
             maestro();
