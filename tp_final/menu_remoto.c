@@ -73,14 +73,13 @@ int maestro(){
 							c=-1;
 							while(c ==-1 || c > 130){ 
 								c = recive();}
-							if(c=='O){
+							if(c=='O'){
 								printf("La secuencia de luces incio Cortectamente");
+								menu_control_remoto();
 							}else{
 							printf("Error a iniciar la sececua fallo de comunicacion");
-							break;
 							}
 							
-							menu_control_remoto();
 						}
 						else{
 							printf("opcion no valida\n");
