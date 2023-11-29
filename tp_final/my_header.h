@@ -25,7 +25,7 @@ void list();
 
 //Syncronizacion de la comunicacion 
 // 
-void limpearBuffer();
+void limpiarBuffer();
 void serialInit();
 //Menu Remoto
 int menu_remoto();
