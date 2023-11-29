@@ -5,14 +5,18 @@
 
 
 int menu_remoto() {
-	printf("Bienvenido al mode Remoto Esperando Sincronicacion");
+	printf("Bienvenido al mode Remoto Esperando Sincronicacion\n");
+	printf("(F) para salir\n");
 	char c=-1;
-	while(c!='P'){
+	while(c!='P' && !condition_end() ){
 		send('P');
 		c=recive();
 	}
-	limpiarBuffer();
-        maestro();
+	if (c =='P'){
+		limpiarBuffer();
+       		 maestro();}
+	else
+		printf("Saliendo del programa\n");
 	
 	return 0;
 }
