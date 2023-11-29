@@ -18,7 +18,7 @@ void serialInit(){
 
  char recive(){
   char caracter=-1;
-  char n=serialDataAvail(fd);
+  int n=serialDataAvail(fd);
    if(n>0){
      do{
      caracter=serialGetchar(fd);
@@ -27,6 +27,7 @@ void serialInit(){
      }while(!(caracter>32&&caracter<128)&& n);
      if(caracter>32&&caracter<128)
        return caracter;
+       serialFlush(fd);
      else 
        caracter = -1;
    }
