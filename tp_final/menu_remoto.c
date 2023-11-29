@@ -62,12 +62,14 @@ int esclavo(){
 
 int maestro(){
      int w = 1;
+	int status = 1;
     int c;
     clean_consol();
     while(w==1){
+	if(status){
 	printf("Menu Maestro\n");
     	printf("Ingrese numero de la secuencia de luces | (E) para salir | (L) lista juegos:\n");
-    	c = read_keyboard();
+    	c = read_keyboard();}
     	switch (c){ //case para juego de luces o salir
 					case 's':
 					case 'S':
@@ -83,6 +85,7 @@ int maestro(){
 					default: 
 						if(c>47 && c<57){
 							send(c);
+							status=0;
 						       //menu_control_remoto();
 						}
 						else{
@@ -90,8 +93,10 @@ int maestro(){
 						}
 						
 		}
-	    if(recive()=='L')
+	    if(recive()=='L'){
 		    menu_control_remoto();
+		    status =1;
+	    }
     }
 
     return 0;
