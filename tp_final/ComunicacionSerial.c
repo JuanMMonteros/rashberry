@@ -25,9 +25,9 @@ void serialInit(){
     printf("%d\n",caracter);
       n--;
      }while(!(caracter>32&&caracter<128)&& n);
-     if(caracter>32&&caracter<128)
+     if(caracter>32&&caracter<128){
        return caracter;
-       serialFlush(fd);
+       serialFlush(fd);}
      else 
        caracter = -1;
    }
