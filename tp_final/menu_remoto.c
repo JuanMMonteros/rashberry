@@ -69,7 +69,9 @@ int maestro(){
 	if(status){
 	printf("Menu Maestro\n");
     	printf("Ingrese numero de la secuencia de luces | (E) para salir | (L) lista juegos:\n");
-    	c = read_keyboard();}
+    	c = read_keyboard();}else{
+		delay(100);
+	}
     	switch (c){ //case para juego de luces o salir
 					case 's':
 					case 'S':
