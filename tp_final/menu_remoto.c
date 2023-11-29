@@ -32,6 +32,7 @@ int esclavo(){
 	    
     	switch (c){ //case para juego de luces o salir
 					case 'P': send('P');
+						  clean_consol();
 						   break;
 					case 's':
 					case 'S':
