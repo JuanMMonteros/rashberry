@@ -84,7 +84,7 @@ int maestro(){
 					case 'L': list(); //lista
 						break;
 					default: 
-						if(c>47 && c<57){
+						if(c>48 && c<57){
 							send(c);
 							status=0;
 						       //menu_control_remoto();
