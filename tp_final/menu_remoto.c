@@ -102,7 +102,7 @@ int maestro(){
 						
 		}
 	    
-	    if( condition_end() && status==0) \\evita bucles sin salida
+	    if( condition_end() && status==0) //evita bucles sin salida
 		    status =1;
 	    if(recive()=='L'){
 		    menu_control_remoto();
