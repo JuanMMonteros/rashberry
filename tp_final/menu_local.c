@@ -46,6 +46,6 @@ void list(){
 	printf("4. Secuencia La Apilada\n");
 	printf("5. Secuencia La Carrera\n");
 	printf("6. Secuencia Dancing\n");
-	printf("7. Secuencia Left to Right\n");
+	printf("7. Secuencia Choque\n");
 	printf("8. Secuencia Zig Zag\n");
 }
