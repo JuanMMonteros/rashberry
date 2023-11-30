@@ -78,7 +78,12 @@ int maestro(){
 					case 'E': //salir menu 
 						printf("Saliendo del menu principal \n");
 						w=0;
-						send('E');
+						limpirBuffer();
+						for(int i =0;i<100;i++){
+						       send('E');
+						       delay(10);
+						}
+						
 						break;
 		                        case 'l':
 					case 'L': list(); //lista
@@ -86,6 +91,8 @@ int maestro(){
 					default: 
 						if(c>48 && c<57){
 							send(c);
+							if (status ==1)
+								printf("Activando juego de luces| preciones f para cancelar");
 							status=0;
 						       //menu_control_remoto();
 						}
@@ -94,6 +101,9 @@ int maestro(){
 						}
 						
 		}
+	    
+	    if( condition_end() && status==0) \\evita bucles sin salida
+		    status =1;
 	    if(recive()=='L'){
 		    menu_control_remoto();
 		    status =1;
