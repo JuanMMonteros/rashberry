@@ -148,7 +148,7 @@ int menu_control_remoto(){
 	    }else{
 		count++;
 	    }
-	if(count>10000){
+	if(count>1000000){
 		clean_consol();
 		printf("Se detecto desincronismo salida forsosa\n");
                 flag=0;
