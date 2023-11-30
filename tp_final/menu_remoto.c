@@ -81,7 +81,7 @@ int maestro(){
 						limpiarBuffer();
 						for(int i =0;i<100;i++){
 						       send('E');
-						       delay(10);
+						       delay(100);
 						}
 						
 						break;
