@@ -90,9 +90,9 @@ int maestro(){
 						break;
 					default: 
 						if(c>48 && c<57){
-							send(c);
 							if (status ==1)
 								printf("Activando juego de luces| preciones f para cancelar");
+							send(c);
 							status=0;
 						       //menu_control_remoto();
 						}
