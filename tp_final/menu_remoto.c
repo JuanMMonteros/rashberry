@@ -110,7 +110,7 @@ int menu_control_remoto(){
 
 	clean_consol();
 	printf("(f) salir | (p) bloqueo | (flecha arriba) aumentar tiempo | (flecha abajo) reducir tiempo\n");
-        while(flag || count<100000){
+        while(flag){
 		
 			
 		
@@ -147,6 +147,11 @@ int menu_control_remoto(){
 		    count=0;
 	    }else{
 		count++;
+	    }
+	if(count>10000){
+		clean_consol();
+		printf("Se detecto desincronismo salida forsosa\n");
+                flag=0;
 	    }
 
 
