@@ -66,7 +66,7 @@ int maestro(){
     clean_consol();
     while(w==1){
 	if(status){
-	printf("Menu Maestro\n");
+	printf("\nMenu Maestro\n");
     	printf("Ingrese numero de la secuencia de luces | (E) para salir | (L) lista juegos:\n");
     	c = read_keyboard();}else{
 		delay(100);
