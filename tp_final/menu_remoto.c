@@ -78,7 +78,7 @@ int maestro(){
 					case 'E': //salir menu 
 						printf("Saliendo del menu principal \n");
 						w=0;
-						limpirBuffer();
+						limpiarBuffer();
 						for(int i =0;i<100;i++){
 						       send('E');
 						       delay(10);
