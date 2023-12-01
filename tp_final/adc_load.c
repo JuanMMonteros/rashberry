@@ -10,9 +10,9 @@
 
 #include "my_header.h"
 
-int adc_init = 1;
 
 int adc_load(void) {
+    int static adc_init = 1;
     int val;
     if (adc_init !=0){
         pcf8591Setup(BASE, Address);
